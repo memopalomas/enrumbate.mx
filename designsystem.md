@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.8 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.9 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -86,8 +86,8 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 
 | ID | Rol | Familia | Pesos | Por qué |
 |---|---|---|---|---|
-| `TIP-01` | Titulares | **Fraunces** (Google Fonts) | 600, 700 + itálica | Serif con curvas suaves (eje SOFT) que hacen eco del camino del logo |
-| `TIP-02` | Texto / UI | **Manrope** (Google Fonts) | 400, 500, 700 | Sans amable y muy legible en móvil |
+| `TIP-01` | Titulares | **Fraunces** (Google Fonts, alojada en `assets/fonts/`) | 600, 700 + itálica | Serif con curvas suaves (eje SOFT) que hacen eco del camino del logo |
+| `TIP-02` | Texto / UI | **Manrope** (Google Fonts, alojada en `assets/fonts/`) | 400, 500, 700 | Sans amable y muy legible en móvil |
 
 ### Escala (fluida móvil → desktop)
 
@@ -219,6 +219,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.9 | 2026-11-12 | TIP-01, TIP-02, LOG-02, LOG-03 | Rendimiento: fotos en WebP a su tamaño (cards 640px, héroes con srcset), logos en WebP de 160px, fuentes alojadas en el sitio (assets/fonts, subconjunto latino) con precarga, espacio reservado para el header (sin saltos al cargar). Arreglo: la tira de beneficios ya no tapa el botón del héroe en móvil |
 | v0.8 | 2026-11-12 | MAR-01, MAR-02, RET-10, RET-12, RET-13, COM-01, COM-04, COM-08, LOG-07, COL-28 | Crítica de diseño (impeccable): inicio con foto en pin (MAR-01, RET-10), camino punteado (COM-08), tarjetas desfasadas (RET-12), proceso con intro fija (RET-13) y preguntas frecuentes. Eyebrow (COM-04) solo en el héroe del inicio. Foco navy en fondos claros, amarillo sobre navy. Énfasis amarillo sobre navy. Se quita la marca de agua girada (LOG-07). Nuevo COL-28 turquesa 600 para hover de Select. Botón flotante de WhatsApp en móvil |
 | v0.7 | 2026-11-12 | MAR-04, VOZ-04 | Textos v1: textos del sitio reescritos con VOZ-04; antes/después con IDs TXT-xx en textos.html |
 | v0.6 | 2026-11-12 | VOZ-04 | Revisión de copy con criterios antislop: se agrega regla contra relleno promocional |

@@ -394,3 +394,9 @@ h1.page-title { font-size: var(--fs-h2); }
   .exp-grid-offset > * { scroll-snap-align: start; }
   .strip-cats .cat-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
+
+/* Reserva el espacio del header y del pie mientras js/site.js los dibuja (evita saltos, CLS) */
+#site-header { min-height: 77px; }
+/* La tira de beneficios sube 64px sobre el héroe: el héroe deja ese espacio libre */
+.hero-dark:has(+ .strip) .hero-inner { padding-bottom: calc(clamp(56px, 9vw, 120px) + var(--space-8)); }
+@media (max-width: 640px) { .strip-inner > :last-child:nth-child(odd) { grid-column: 1 / -1; } }

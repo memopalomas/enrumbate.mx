@@ -45,80 +45,80 @@ window.ENR = {
       desc: "Te llevamos a la Arena VFG y te traemos de regreso. Incluye aire acondicionado, música de Morat en el camino, seguro de viajero, agua, snack y un regalo. Salidas desde Gran Terraza Oblatos, Parque Rojo y Centro Sur.",
       precio: "$450 por persona · 3 por $1,260 · Aparta con $250",
       fecha: "2026-11-20", fechaFin: "2026-11-21", fechaTexto: "20 y 21 de noviembre 2026", lugar: "Arena VFG, GDL",
-      img: "assets/img/exp/arena.jpg", alt: "Público de un estadio con las luces de sus celulares encendidas", inicio: true },
+      img: "assets/img/exp/arena.webp", alt: "Público de un estadio con las luces de sus celulares encendidas", inicio: true },
 
     { id: "morat-fan-party", linea: "originales", categoria: "conciertos", etiqueta: "Fan party",
       titulo: "Morat Fan Party: ¡La noche es nuestra!",
       desc: "Una noche para cantar y bailar Morat con otros fans, con cóctel de bienvenida y regalos. Evento de fans, no oficial. Solo mayores de edad.",
       fecha: "2026-11-28", fechaTexto: "Sábado 28 de noviembre 2026 · 9:00 p. m.", lugar: "Rakata Chapultepec, GDL",
-      img: "assets/img/exp/fan-party.jpg", alt: "Chica sonriendo en una fiesta con gente bailando detrás", inicio: true },
+      img: "assets/img/exp/fan-party.webp", alt: "Chica sonriendo en una fiesta con gente bailando detrás", inicio: true },
 
     { id: "pub-crawl-gdl", linea: "originales", categoria: "nocturna", etiqueta: "Vida nocturna",
       titulo: "Pub Crawl Guadalajara",
       desc: "Una noche recorriendo varios bares de Guadalajara en grupo.",
       fecha: "2027-01-15", fechaTexto: "Enero 2027", lugar: "GDL",
-      img: "assets/img/exp/bares.jpg", alt: "Coctel iluminado con luces neón en un bar", inicio: true },
+      img: "assets/img/exp/bares.webp", alt: "Coctel iluminado con luces neón en un bar", inicio: true },
 
     { id: "cata-vino-mexicano", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata de vino mexicano",
       desc: "Una selección de vinos de distintas regiones de México.",
       fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
-      img: "assets/img/exp/vino.jpg", alt: "Vino tinto cayendo en una copa junto a una garrafa", inicio: true },
+      img: "assets/img/exp/vino.webp", alt: "Vino tinto cayendo en una copa junto a una garrafa", inicio: true },
 
     { id: "punta-perula", linea: "originales", categoria: "escapadas", etiqueta: "Escapada",
       titulo: "Punta Pérula y Cancuncito",
       desc: "Salida a la costa de Jalisco, a dos playas de mar tranquilo.",
       fecha: "2026-11-22", fechaTexto: "22 de noviembre 2026", lugar: "Costa de Jalisco",
-      img: "assets/img/exp/punta-perula.jpg", alt: "Atardecer en la playa de Punta Pérula", inicio: true },
+      img: "assets/img/exp/punta-perula.webp", alt: "Atardecer en la playa de Punta Pérula", inicio: true },
 
     { id: "cata-cerveza", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata de cerveza de importación",
       desc: "Una selección de cervezas de importación para probar y comparar.",
       fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
-      img: "assets/img/exp/cerveza.jpg", alt: "Degustación de cuatro cervezas" },
+      img: "assets/img/exp/cerveza.webp", alt: "Degustación de cuatro cervezas" },
 
     { id: "cata-vinedos", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata en viñedos",
       desc: "Degustación y maridaje en un viñedo de Jalisco.",
       fecha: null, fechaTexto: "Próximamente", lugar: "Jalisco",
-      img: "assets/img/exp/vinedos.jpg", alt: "Viñedo al atardecer" },
+      img: "assets/img/exp/vinedos.webp", alt: "Viñedo al atardecer" },
 
     { id: "transporte-conciertos", linea: "originales", categoria: "conciertos", etiqueta: "Concierto",
       titulo: "Transporte a conciertos",
       desc: "Viaje redondo a la Arena VFG para los conciertos de la temporada.",
       fecha: null, fechaTexto: "Próximos eventos", lugar: "Arena VFG, GDL",
-      img: "assets/img/exp/conciertos.jpg", alt: "Banda en concierto bajo luces de escenario" },
+      img: "assets/img/exp/conciertos.webp", alt: "Banda en concierto bajo luces de escenario" },
 
     { id: "tour-gotico", linea: "originales", categoria: "recorridos", etiqueta: "Recorrido",
       titulo: "Tour Gótico ZMG",
       desc: "Recorrido por las leyendas y los templos neogóticos de Guadalajara.",
       fecha: "2027-01-22", fechaTexto: "Enero 2027", lugar: "GDL",
-      img: "assets/img/exp/tour-gotico.jpg", alt: "Templo Expiatorio de Guadalajara, de estilo neogótico" },
+      img: "assets/img/exp/tour-gotico.webp", alt: "Templo Expiatorio de Guadalajara, de estilo neogótico" },
 
     /* ---------- Enrúmbate Select ---------- */
     { id: "select-vinedos", linea: "select", categoria: "catas", etiqueta: "Select",
       titulo: "Cata en viñedos",
       desc: "Visita privada a un viñedo, con cata guiada para tu grupo.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el destino",
-      img: "assets/img/exp/vinedos.jpg", alt: "Viñedo al atardecer" },
+      img: "assets/img/exp/vinedos.webp", alt: "Viñedo al atardecer" },
 
     { id: "select-cenas", linea: "select", categoria: "cenas", etiqueta: "Select",
       titulo: "Cenas especiales",
       desc: "Cenas temáticas y maridajes en un lugar elegido para la ocasión.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el lugar",
-      img: "assets/img/exp/cenas.jpg", alt: "Mesa para cenar con copas de vino a la luz de las velas" },
+      img: "assets/img/exp/cenas.webp", alt: "Mesa para cenar con copas de vino a la luz de las velas" },
 
     { id: "select-escapadas", linea: "select", categoria: "escapadas", etiqueta: "Select",
       titulo: "Escapadas de fin de semana",
       desc: "Hospedaje, traslados y actividades en el destino que elijas.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el destino",
-      img: "assets/img/exp/escapadas.jpg", alt: "Persona en una alberca infinita frente al mar" },
+      img: "assets/img/exp/escapadas.webp", alt: "Persona en una alberca infinita frente al mar" },
 
     { id: "select-recorridos", linea: "select", categoria: "privadas", etiqueta: "Select",
       titulo: "Recorridos privados",
       desc: "Un guía solo para tu grupo, al ritmo que ustedes quieran.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el destino",
-      img: "assets/img/exp/recorridos.jpg", alt: "Callejón de Guanajuato con bugambilias" }
+      img: "assets/img/exp/recorridos.webp", alt: "Callejón de Guanajuato con bugambilias" }
   ],
 
   creditos: [

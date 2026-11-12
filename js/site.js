@@ -59,7 +59,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand brand-tag" href="inicio.html" aria-label="Enrúmbate, inicio">
-          <img src="assets/logo-mark.png" alt="" width="34" height="44">
+          <img src="assets/logo-mark.webp" alt="" width="34" height="44">
           <span class="brand-words"><span class="brand-name">Enrúmbate</span><small>Descubre. Vive. Repite.</small></span>
         </a>
         <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
@@ -81,7 +81,7 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <a class="brand brand-tag" href="inicio.html">
-            <img src="assets/logo-mark-light.png" alt="" width="34" height="44">
+            <img src="assets/logo-mark-light.webp" alt="" width="34" height="44">
             <span class="brand-words"><span class="brand-name">Enrúmbate</span><small>Descubre. Vive. Repite.</small></span>
           </a>
           <p>Planes memorables, con todo el gusto de vivirlos. Experiencias en México y durante tus viajes.</p>

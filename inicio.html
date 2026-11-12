@@ -17,10 +17,10 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://enrumbate.mx/inicio.html">
-  <link rel="icon" type="image/png" href="assets/logo-mark.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600..700,100;1,9..144,600..700,100&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo-mark-sm.png">
+  <link rel="preload" as="image" href="assets/img/hero.webp" imagesrcset="assets/img/hero-560.webp 560w, assets/img/hero.webp 880w" imagesizes="(min-width: 1024px) 440px, min(78vw, 360px)" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/site.css">
 </head>
@@ -44,7 +44,7 @@
           </div>
         </div>
         <figure class="hero-figure">
-          <img src="assets/img/hero.jpg" alt="Calle empedrada con estrellas de papel colgadas al atardecer" width="1200" height="900" fetchpriority="high">
+          <img src="assets/img/hero.webp" srcset="assets/img/hero-560.webp 560w, assets/img/hero.webp 880w" sizes="(min-width: 1024px) 440px, min(78vw, 360px)" alt="Calle empedrada con estrellas de papel colgadas al atardecer" width="880" height="1100" fetchpriority="high">
           <span data-icon="spark" class="hero-star"></span>
           <a class="hero-next" id="hero-next" hidden></a>
         </figure>
@@ -57,7 +57,7 @@
         <div class="lines">
           <a class="line-card originales" href="originales.html">
             <div class="line-lockup">
-              <img src="assets/logo-mark.png" alt="" width="48" height="64">
+              <img src="assets/logo-mark.webp" alt="" width="48" height="64">
               <div class="lbl"><span class="line-pill originales">Originales</span><span class="of">de Enrúmbate</span></div>
             </div>
             <p>Salidas en grupo con fecha fija. Ve solo o con amigos.</p>
@@ -65,7 +65,7 @@
           </a>
           <a class="line-card select" href="select.html">
             <div class="line-lockup">
-              <img src="assets/logo-mark.png" alt="" width="48" height="64">
+              <img src="assets/logo-mark.webp" alt="" width="48" height="64">
               <div class="lbl"><span class="of">Enrúmbate</span><span class="line-pill select"><span data-icon="crown" class="pill-ico"></span>Select</span></div>
             </div>
             <p>Planes privados, armados para tu ocasión.</p>
