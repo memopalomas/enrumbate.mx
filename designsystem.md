@@ -1,21 +1,31 @@
 # Enrúmbate — Design System
 
-> v0.1 · 2026-11-11 · Derivado del logo (`assets/logo.jpg`)
-> Implementación en código: `css/styles.css` (tokens en `:root`).
+> v0.2 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
+
+## Cómo pedir cambios
+
+Cada elemento tiene un **ID** (ej. `COL-02`, `TIP-10`, `COM-01`). Para pedir un cambio, cita el ID y lo que quieres:
+
+> `COL-02` → un magenta menos saturado
+> `TIP-01` → probar otra tipografía para titulares
+> `COM-01` → botones con esquinas menos redondeadas
+
+El cambio se aplica en este archivo, en `css/styles.css` y en `/designsystem.html`, y se anota en **Registro de cambios** (al final) con el ID afectado.
+
+Prefijos: `MAR` concepto · `COL` color · `TIP` tipografía · `RET` retícula · `ESP` espaciado · `FOR` forma y movimiento · `LOG` logo · `COM` componentes · `VOZ` voz.
 
 ---
 
 ## 1. Concepto de marca
 
-El logo es un **pin de ubicación** que contiene un **camino sinuoso** (doble trazo navy + magenta) que avanza hacia una **estrella de cuatro puntas**. Lo traducimos a tres ideas que guían todo el sistema:
+El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) que avanza hacia una **estrella de cuatro puntas**.
 
-| Idea | Del logo | En la interfaz |
-|---|---|---|
-| **Destino** | El pin | Bloques con esquinas redondeadas, formas contenidas, navegación clara |
-| **Trayecto** | El camino en "S" | Curvas, líneas onduladas como separadores, ritmo asimétrico |
-| **Chispa** | La estrella | Acentos amarillos puntuales: nunca como fondo grande, siempre como detalle |
-
-Tono: cercano, alegre, profesional. Experiencias en México y durante tus viajes.
+| ID | Idea | Del logo | En la interfaz |
+|---|---|---|---|
+| `MAR-01` | **Destino** | El pin | Esquinas redondeadas, forma “pin” en imágenes destacadas, navegación clara |
+| `MAR-02` | **Trayecto** | El camino en “S” | Curvas, líneas punteadas en S, composición asimétrica |
+| `MAR-03` | **Chispa** | La estrella | Acentos amarillos puntuales (✦), nunca como fondo grande |
 
 ---
 
@@ -23,174 +33,174 @@ Tono: cercano, alegre, profesional. Experiencias en México y durante tus viajes
 
 ### 2.1 Paleta base (muestreada del logo)
 
-| Token | HEX | RGB | Uso |
-|---|---|---|---|
-| `--navy-700` **Noche** | `#053067` | 5, 48, 103 | Color principal. Texto de titulares, fondos de sección destacados, footer |
-| `--magenta-500` **Rumba** | `#EA0C7B` | 234, 12, 123 | Acción. Botones primarios, enlaces, eyebrows |
-| `--yellow-400` **Chispa** | `#F3D036` | 243, 208, 54 | Acento. Estrella, viñetas, subrayados, detalles sobre navy |
-| `--cream-50` **Arena** | `#F5F4F0` | 245, 244, 240 | Fondo general de la web |
+| ID | Nombre | Token | HEX | RGB | Uso |
+|---|---|---|---|---|---|
+| `COL-01` | **Noche** | `--navy-700` | `#053067` | 5, 48, 103 | Principal: titulares, secciones oscuras |
+| `COL-02` | **Rumba** | `--magenta-500` | `#EA0C7B` | 234, 12, 123 | Acción y acentos: palabras destacadas, iconos |
+| `COL-03` | **Chispa** | `--yellow-400` | `#F3D036` | 243, 208, 54 | Detalles: estrella, subrayados, números sobre navy |
+| `COL-04` | **Arena** | `--cream-50` | `#F5F4F0` | 245, 244, 240 | Fondo general |
 
 ### 2.2 Escalas extendidas
 
-| Navy | | Magenta | | Amarillo | | Neutros | |
-|---|---|---|---|---|---|---|---|
-| 900 | `#021B3D` | 700 | `#B00A5D` | 600 | `#C9A514` | white | `#FFFFFF` |
-| 700 | `#053067` | 600 | `#CC0A6B` | 400 | `#F3D036` | cream-50 | `#F5F4F0` |
-| 500 | `#2A5490` | 500 | `#EA0C7B` | 100 | `#FBF1C4` | cream-100 | `#ECE9E1` |
-| 300 | `#8DA4C7` | 100 | `#FCE0EE` | | | ink-500 | `#4A5670` |
-| 100 | `#E3E9F3` | | | | | line | `#D9D5CA` |
+| ID | Token | HEX | Uso |
+|---|---|---|---|
+| `COL-11` | `--navy-900` | `#021B3D` | Footer |
+| `COL-12` | `--navy-700` | `#053067` | = COL-01 |
+| `COL-13` | `--navy-500` | `#2A5490` | Degradados |
+| `COL-14` | `--navy-300` | `#8DA4C7` | Texto secundario sobre navy |
+| `COL-15` | `--navy-100` | `#E3E9F3` | Fondos suaves |
+| `COL-21` | `--magenta-700` | `#B00A5D` | Hover de botón, eyebrows, texto magenta pequeño |
+| `COL-22` | `--magenta-600` | `#CC0A6B` | Fondo de botón primario |
+| `COL-23` | `--magenta-500` | `#EA0C7B` | = COL-02 |
+| `COL-24` | `--magenta-100` | `#FCE0EE` | Fondos suaves |
+| `COL-31` | `--yellow-600` | `#C9A514` | Reserva |
+| `COL-32` | `--yellow-400` | `#F3D036` | = COL-03 |
+| `COL-33` | `--yellow-100` | `#FBF1C4` | Fondos suaves |
+| `COL-41` | `--white` | `#FFFFFF` | Tarjetas |
+| `COL-42` | `--cream-50` | `#F5F4F0` | = COL-04 |
+| `COL-43` | `--cream-100` | `#ECE9E1` | Bandas alternas |
+| `COL-44` | `--ink-500` | `#4A5670` | Texto secundario |
+| `COL-45` | `--line` | `#D9D5CA` | Bordes y divisores |
 
-### 2.3 Roles semánticos
+### 2.3 Reglas de color
 
-| Token | Valor | Uso |
-|---|---|---|
-| `--color-bg` | cream-50 | Fondo de página |
-| `--color-surface` | white | Tarjetas |
-| `--color-surface-alt` | cream-100 | Bandas alternas |
-| `--color-text` | navy-700 | Texto principal |
-| `--color-text-muted` | ink-500 | Texto secundario |
-| `--color-accent` | magenta-500 | CTA, links |
-| `--color-accent-hover` | magenta-700 | Hover de CTA |
-| `--color-spark` | yellow-400 | Detalles |
-| `--color-inverse-bg` | navy-700 | Secciones oscuras |
-| `--color-inverse-text` | cream-50 | Texto sobre navy |
-
-### 2.4 Contraste (WCAG)
-
-| Combinación | Ratio | Resultado |
-|---|---|---|
-| Navy `#053067` sobre Arena `#F5F4F0` | ≈ 11.7 : 1 | AAA |
-| Arena sobre Navy | ≈ 11.7 : 1 | AAA |
-| Blanco sobre Magenta `#EA0C7B` | ≈ 4.3 : 1 | AA solo texto grande / bold ≥ 18.6px |
-| Blanco sobre Magenta-700 `#B00A5D` | ≈ 6.9 : 1 | AA |
-| Amarillo `#F3D036` sobre Navy | ≈ 8.5 : 1 | AAA |
-| Amarillo sobre Arena | ≈ 1.4 : 1 | ❌ Nunca como texto sobre fondo claro |
-
-**Reglas**
-- Botones: fondo `magenta-600` (5.5:1 con blanco, AA en cualquier tamaño); `magenta-500` puro queda para formas, iconos y titulares grandes.
-- El amarillo solo vive sobre navy o como forma decorativa (estrella, subrayado, punto).
-- Proporción aproximada por pantalla: **60 % Arena · 25 % Navy · 10 % Magenta · 5 % Amarillo**.
+| ID | Regla |
+|---|---|
+| `COL-50` | Proporción por pantalla: **60 % Arena · 25 % Noche · 10 % Rumba · 5 % Chispa** |
+| `COL-51` | Botones con fondo `COL-22` (5.5 : 1 con blanco, AA). `COL-02` puro solo en formas, iconos y titulares grandes (4.3 : 1) |
+| `COL-52` | El amarillo nunca como texto sobre fondo claro (1.4 : 1). Solo sobre navy (8.5 : 1) o como forma |
+| `COL-53` | Navy sobre Arena y viceversa: 11.7 : 1 (AAA) |
 
 ---
 
 ## 3. Tipografía
 
-Familias (Google Fonts):
-
-| Rol | Familia | Por qué |
-|---|---|---|
-| **Display** (titulares) | **Fraunces** — 600/700, con *italic* | Serif suave con curvas “blandas” (eje SOFT) que eco del camino del logo; da calidez y carácter de viaje. |
-| **Texto / UI** | **Manrope** — 400/500/700 | Sans geométrica amable, muy legible en móvil, buen soporte de acentos en español. |
-
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600..700,100;1,9..144,600..700,100&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-```
-
-### 3.1 Escala tipográfica (fluida, ratio ~1.25)
-
-| Token | Tamaño (móvil → desktop) | Familia / peso | Line-height | Uso |
+| ID | Rol | Familia | Pesos | Por qué |
 |---|---|---|---|---|
-| `--fs-display` | 44 → 88px | Fraunces 700 | 1.0 | H1 hero |
-| `--fs-h2` | 34 → 56px | Fraunces 600 | 1.08 | Título de sección |
-| `--fs-h3` | 22 → 28px | Fraunces 600 | 1.2 | Tarjetas, pasos |
-| `--fs-lead` | 18 → 22px | Manrope 500 | 1.5 | Bajada / tagline |
-| `--fs-body` | 16 → 17px | Manrope 400 | 1.65 | Párrafos |
-| `--fs-small` | 14px | Manrope 500 | 1.5 | Notas, captions |
-| `--fs-eyebrow` | 13px | Manrope 700, MAYÚSCULAS, tracking 0.14em | 1.2 | Pre-títulos |
+| `TIP-01` | Titulares | **Fraunces** (Google Fonts) | 600, 700 + itálica | Serif con curvas suaves (eje SOFT) que hacen eco del camino del logo |
+| `TIP-02` | Texto / UI | **Manrope** (Google Fonts) | 400, 500, 700 | Sans amable y muy legible en móvil |
 
-**Reglas**
-- Una palabra clave del H1/H2 puede ir en *Fraunces italic* en magenta (“la chispa” del titular). Máximo una por título.
-- Longitud de línea de párrafo: 45–70 caracteres (`max-width: 62ch`).
-- Nunca texto en mayúsculas largas salvo eyebrows y botones cortos.
+### Escala (fluida móvil → desktop)
+
+| ID | Token | Tamaño | Familia / peso | Interlineado | Uso |
+|---|---|---|---|---|---|
+| `TIP-10` | `--fs-display` | 44 → 88px | Fraunces 700 | 1.0 | H1 |
+| `TIP-11` | `--fs-h2` | 34 → 56px | Fraunces 600 | 1.08 | Títulos de sección |
+| `TIP-12` | `--fs-h3` | 22 → 28px | Fraunces 600 | 1.2 | Tarjetas, pasos |
+| `TIP-13` | `--fs-lead` | 18 → 22px | Manrope 500 | 1.5 | Bajadas |
+| `TIP-14` | `--fs-body` | 16 → 17px | Manrope 400 | 1.65 | Párrafos |
+| `TIP-15` | `--fs-small` | 14px | Manrope 500 | 1.5 | Notas, captions |
+| `TIP-16` | `--fs-eyebrow` | 13px | Manrope 700, MAYÚSCULAS, +0.14em | 1.2 | Pre-títulos |
+
+| ID | Regla |
+|---|---|
+| `TIP-20` | Una sola palabra clave por título en *Fraunces itálica* magenta (amarilla sobre navy) |
+| `TIP-21` | Párrafos de 45–70 caracteres por línea |
+| `TIP-22` | Mayúsculas solo en eyebrows |
 
 ---
 
-## 4. Retícula y espaciado
+## 4. Retícula
 
-### 4.1 Retícula
+| ID | Breakpoint | Ancho | Columnas | Gutter | Margen |
+|---|---|---|---|---|---|
+| `RET-01` | Móvil | < 640px | 4 | 16px | 20px |
+| `RET-02` | Tablet | 640–1023px | 8 | 24px | 32px |
+| `RET-03` | Desktop | ≥ 1024px | 12 | 32px | 48px |
+| `RET-04` | Contenedor máximo | 1240px | 12 | 32px | auto |
 
-| Breakpoint | Ancho | Columnas | Gutter | Margen lateral |
-|---|---|---|---|---|
-| **sm** (móvil) | < 640px | 4 | 16px | 20px |
-| **md** (tablet) | 640–1023px | 8 | 24px | 32px |
-| **lg** (desktop) | ≥ 1024px | 12 | 32px | 48px |
-| Contenedor máx. | 1240px | 12 | 32px | auto |
+Composiciones en desktop:
 
-Clases: `.container` (contenedor), `.grid` (12 col), `.col-*` / `.md:col-*` según necesidad. Composiciones recomendadas en desktop:
-- Hero: texto 6 col + imagen 6 col (imagen sangra al borde derecho opcionalmente).
-- Encabezado de sección: título 7 col + texto 5 col (asimétrico, como el camino).
-- Tarjetas: 4 × 3 col (desktop) → 2 × 4 col (tablet) → 1 × 4 col (móvil).
-- Pasos: intro 5 col + lista 7 col.
-
-### 4.2 Espaciado (base 8)
-
-| Token | px |
-|---|---|
-| `--space-1` | 4 |
-| `--space-2` | 8 |
-| `--space-3` | 12 |
-| `--space-4` | 16 |
-| `--space-5` | 24 |
-| `--space-6` | 32 |
-| `--space-7` | 48 |
-| `--space-8` | 64 |
-| `--space-9` | 96 |
-| `--space-10` | 128 |
-
-Padding vertical de sección: `clamp(64px, 10vw, 128px)`.
-
-### 4.3 Radios, sombras, movimiento
-
-| Token | Valor | Uso |
+| ID | Bloque | Distribución |
 |---|---|---|
-| `--radius-sm` | 8px | Inputs, chips |
-| `--radius-md` | 16px | Tarjetas |
-| `--radius-lg` | 28px | Imágenes grandes |
-| `--radius-pin` | 999px 999px 999px 24px | Forma “pin” para imágenes destacadas (inspirada en el logo) |
-| `--radius-pill` | 999px | Botones |
-| `--shadow-card` | `0 1px 2px rgba(5,48,103,.06), 0 12px 32px -12px rgba(5,48,103,.18)` | Tarjetas |
-| `--ease` | `cubic-bezier(.2,.7,.2,1)` | Transiciones |
-| `--dur` | 220ms | Hover / focus |
-
-Respetar `prefers-reduced-motion`: sin animaciones de desplazamiento ni cinta en movimiento.
+| `RET-10` | Hero | Texto 6 col · imagen 5 col (col 8–12) |
+| `RET-11` | Encabezado de sección | Título 7 col · texto 5 col |
+| `RET-12` | Tarjetas | 4 × 3 col (desktop) · 2 × 4 (tablet) · 1 × 4 (móvil); pares desfasadas 64px |
+| `RET-13` | Proceso | Intro 5 col (fija al hacer scroll) · pasos 6 col |
+| `RET-14` | Contacto | Texto 7 col · botones 5 col |
 
 ---
 
-## 5. Logo
+## 5. Espaciado (base 8)
 
-| Archivo | Uso |
+| ID | Token | px |
+|---|---|---|
+| `ESP-01` | `--space-1` | 4 |
+| `ESP-02` | `--space-2` | 8 |
+| `ESP-03` | `--space-3` | 12 |
+| `ESP-04` | `--space-4` | 16 |
+| `ESP-05` | `--space-5` | 24 |
+| `ESP-06` | `--space-6` | 32 |
+| `ESP-07` | `--space-7` | 48 |
+| `ESP-08` | `--space-8` | 64 |
+| `ESP-09` | `--space-9` | 96 |
+| `ESP-10` | `--space-10` | 128 |
+| `ESP-11` | `--section-y` | 64 → 128 (padding vertical de sección) |
+
+---
+
+## 6. Forma y movimiento
+
+| ID | Token | Valor | Uso |
+|---|---|---|---|
+| `FOR-01` | `--radius-sm` | 8px | Chips, inputs |
+| `FOR-02` | `--radius-md` | 16px | Tarjetas, fotos de tarjeta |
+| `FOR-03` | `--radius-lg` | 28px | Bloque de contacto |
+| `FOR-04` | `--radius-pin` | 999 999 999 24px | Foto principal en forma de pin |
+| `FOR-05` | `--radius-pill` | 999px | Botones |
+| `FOR-06` | `--shadow-card` | sombra azulada suave | Tarjetas, foto principal |
+| `FOR-07` | `--ease` / `--dur` | curva suave · 220ms | Hover y foco |
+| `FOR-08` | — | — | Con “reducir movimiento” activado se apagan animaciones y la cinta |
+
+---
+
+## 7. Logo
+
+| ID | Archivo / regla | Uso |
+|---|---|---|
+| `LOG-01` | `assets/logo.jpg` | Original (2000×2000, fondo arena) |
+| `LOG-02` | `assets/logo-mark.png` | Isotipo transparente sobre fondos claros |
+| `LOG-03` | `assets/logo-mark-light.png` | Isotipo con trazo claro sobre navy |
+| `LOG-04` | Lockup | Isotipo + “Enrúmbate” en Fraunces 700, separación 12px |
+| `LOG-05` | Área de protección | Ancho de la estrella alrededor del isotipo |
+| `LOG-06` | Tamaño mínimo | 28px de alto |
+| `LOG-07` | No permitido | Rotar, recolorear el camino, sombras, sobre fotos sin velo |
+
+> Pendiente: logo en vector (SVG/AI) para mejorar `LOG-02` y `LOG-03`.
+
+---
+
+## 8. Componentes
+
+| ID | Componente | Especificación |
+|---|---|---|
+| `COM-01` | Botón primario | Fondo `COL-22`, texto blanco Manrope 700 16px, 14×28px, `FOR-05`. Hover `COL-21` + flecha ↗ se mueve. Foco: contorno amarillo 3px |
+| `COM-02` | Botón secundario | Borde 2px navy, texto navy. Hover: relleno navy, texto arena. Sobre navy se invierte |
+| `COM-03` | Enlace de texto | Navy 700 bold con subrayado amarillo de 6px; hover subrayado magenta |
+| `COM-04` | Eyebrow | ✦ + texto `TIP-16` en `COL-21`; sobre navy en amarillo |
+| `COM-05` | Cinta de categorías | Fraunces itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
+| `COM-06` | Tarjeta de experiencia | Foto 4:5 `FOR-02`, número, H3 y frase. Hover: la foto sube 6px y gira levemente |
+| `COM-07` | Paso numerado | Número Fraunces amarillo, H3 arena, caja translúcida sobre navy |
+| `COM-08` | Camino decorativo | Línea punteada magenta en S detrás de secciones navy |
+| `COM-09` | Iconos de contacto | Círculo 44px con borde; hover relleno magenta |
+| `COM-10` | Header | Fijo, fondo arena translúcido con desenfoque; en móvil menú desplegable |
+| `COM-11` | Footer | Fondo `COL-11`, lockup claro, correo, teléfono, WhatsApp, Facebook |
+
+---
+
+## 9. Voz y contenido
+
+| ID | Regla |
 |---|---|
-| `assets/logo.jpg` | Original, fondo arena (2000×2000) |
-| `assets/logo-mark.png` | Isotipo con fondo transparente — sobre fondos claros |
-| `assets/logo-mark-light.png` | Isotipo con trazo navy convertido a arena — sobre navy |
-
-- **Área de protección**: el ancho de la estrella alrededor del isotipo.
-- **Tamaño mínimo**: 28px de alto en pantalla.
-- Lockup horizontal: isotipo + wordmark “Enrúmbate” en Fraunces 700, navy, separados por `--space-3`.
-- No: rotar, cambiar colores del camino, aplicar sombras, colocar sobre fotos sin velo.
+| `VOZ-01` | Tuteo, frases cortas, verbos de experiencia: vivir, descubrir, armar, disfrutar, enrumbarse |
+| `VOZ-02` | Evitar tecnicismos (“paquetes”, “cotización”) en titulares |
+| `VOZ-03` | Español de México |
 
 ---
 
-## 6. Componentes
+## Registro de cambios
 
-| Componente | Especificación |
-|---|---|
-| **Botón primario** | Fondo magenta-600 (`#CC0A6B`, 5.5:1 con blanco → AA), texto blanco Manrope 700 16px, padding 14×28, radius pill. Hover: magenta-700 + flecha se desplaza 3px. Focus: outline 3px yellow-400, offset 3px. |
-| **Botón secundario** | Borde 2px navy, texto navy. Hover: fondo navy, texto arena. |
-| **Enlace de texto** | Navy 700 con subrayado amarillo grueso (6px, offset abajo). Hover: subrayado magenta. |
-| **Eyebrow** | Estrella ✦ amarilla/magenta + texto en mayúsculas magenta-700. Sobre navy: amarillo. |
-| **Chip / cinta** | Texto Fraunces italic, separado por estrellas ✦ amarillas, sobre banda navy. |
-| **Tarjeta de experiencia** | Imagen 4:5 con radius-md, título H3 y tagline. Hover: imagen escala 1.04. |
-| **Paso numerado** | Número en Fraunces 700 amarillo (sobre navy), H3 arena, texto navy-300/arena 80 %. |
-| **Separador “camino”** | SVG de onda en S con trazo magenta 3px, usado entre secciones. |
-| **Iconos sociales** | 40×40, círculo con borde 1.5px, hover relleno magenta. |
-
----
-
-## 7. Voz y contenido
-
-- Tuteo, frases cortas, verbos de experiencia: *vivir, descubrir, armar, disfrutar, enrumbarse*.
-- Evitar tecnicismos de agencia (“paquetes”, “cotización”) en titulares; usarlos solo en formularios.
-- Español de México.
+| Versión | Fecha | IDs | Cambio |
+|---|---|---|---|
+| v0.2 | 2026-11-12 | todos | IDs de referencia y página `/designsystem.html` |
+| v0.1 | 2026-11-11 | — | Primera versión derivada del logo |
