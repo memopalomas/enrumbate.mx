@@ -1,0 +1,47 @@
+name: Deploy FTP
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      clean:
+        description: "Borrar TODO en el servidor antes de subir (clean slate)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-ftp
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Acepta FTP_URL / FTPURL / FTP_SERVER con o sin "ftp://"
+      - name: Resolver host FTP
+        id: ftp
+        env:
+          RAW: ${{ secrets.FTP_URL || secrets.FTPURL || secrets.FTP_SERVER || secrets.FTP_HOST }}
+        run: |
+          host="${RAW#*://}"; host="${host%%/*}"
+          if [ -z "$host" ]; then echo "::error::Falta el secret del servidor FTP"; exit 1; fi
+          echo "host=$host" >> "$GITHUB_OUTPUT"
+
+      - name: Subir sitio
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ steps.ftp.outputs.host }}
+          username: ${{ secrets.FTP_USER || secrets.FTPUSER || secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASS || secrets.FTPPASS || secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ./
+          dangerous-clean-slate: ${{ github.event.inputs.clean == 'true' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            designsystem.md
+            README.md
