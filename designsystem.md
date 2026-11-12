@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.2 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.3 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -182,9 +182,9 @@ Composiciones en desktop:
 | `COM-06` | Tarjeta de experiencia | Foto 4:5 `FOR-02`, número, H3 y frase. Hover: la foto sube 6px y gira levemente |
 | `COM-07` | Paso numerado | Número Fraunces amarillo, H3 arena, caja translúcida sobre navy |
 | `COM-08` | Camino decorativo | Línea punteada magenta en S detrás de secciones navy |
-| `COM-09` | Iconos de contacto | Círculo 44px con borde; hover relleno magenta |
+| `COM-09` | Iconos de contacto | Círculo 44px con borde; hover relleno magenta. WhatsApp, Facebook, Instagram |
 | `COM-10` | Header | Fijo, fondo arena translúcido con desenfoque; en móvil menú desplegable |
-| `COM-11` | Footer | Fondo `COL-11`, lockup claro, correo, teléfono, WhatsApp, Facebook |
+| `COM-11` | Footer | Fondo `COL-11`, lockup claro, correo, teléfono, WhatsApp, Facebook, Instagram |
 
 ---
 
@@ -202,5 +202,6 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.3 | 2026-11-12 | COM-09, COM-11 | Se agrega Instagram (@enrumbate.mx) |
 | v0.2 | 2026-11-12 | todos | IDs de referencia y página `/designsystem.html` |
 | v0.1 | 2026-11-11 | — | Primera versión derivada del logo |
