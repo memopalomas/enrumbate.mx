@@ -145,9 +145,19 @@
       if (d.inicio) list = list.filter(e => e.inicio);
       if (d.orden === 'fecha') list.sort(byDate);
       if (d.limit) list = list.slice(0, +d.limit);
-      el.innerHTML = list.map(card).join('');
+      el.innerHTML = list.length ? list.map(card).join('') : emptyMsg(d.vacio);
     });
   }
+  /* Lista sin experiencias: mensaje con salida a WhatsApp en lugar de un hueco */
+  function emptyMsg(t) {
+    return `<p class="empty">${esc(t || 'Estamos preparando las próximas fechas.')} <a class="text-link" href="${wa('Hola Enrúmbate, ¿qué experiencias vienen pronto?')}" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a>.</p>`;
+  }
+  /* Si una foto no carga, queda el fondo de color con su etiqueta en vez del ícono roto */
+  document.addEventListener('error', ev => {
+    const t = ev.target;
+    if (t.tagName === 'IMG' && t.closest('.exp-media, .cal-item')) t.style.visibility = 'hidden';
+  }, true);
+
   /* Oculta experiencias cuya última fecha ya pasó */
   const hoy = (() => { const n = new Date(); return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`; })();
   function vigente(e) { const fin = e.fechaFin || e.fecha; return !fin || fin >= hoy; }
@@ -233,5 +243,5 @@
   waLinks();
   navToggle();
 
-  window.ENRUI = { icon, wa, card, esc, byDate, vigente };
+  window.ENRUI = { icon, wa, card, esc, byDate, vigente, emptyMsg };
 })();

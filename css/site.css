@@ -380,9 +380,6 @@ h1.page-title { font-size: var(--fs-h2); }
   .contact-grid > .form { grid-column: 1 / span 7; }
   .contact-grid > .contact-aside { grid-column: 9 / -1; }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
-}
 @media (max-width: 699px) {
   .exp-grid-offset {
     grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 84%;
@@ -472,3 +469,15 @@ h1.page-title { font-size: var(--fs-h2); }
   .strip-inner > :nth-last-child(2):nth-child(odd) { border-bottom-width: 1px; border-bottom-style: solid; }
   .strip-inner > :last-child { border-bottom: 0; }
 }
+
+/* ---------- Casos límite (v0.11) ---------- */
+.field-error { font-size: var(--fs-small); font-weight: 600; color: var(--magenta-700); }
+.field input[aria-invalid="true"] { border-color: var(--magenta-600); }
+.field-hint { font-size: var(--fs-small); color: var(--color-text-muted); }
+.results-count { font-size: var(--fs-small); font-weight: 600; color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.exp-grid > .empty { grid-column: 1 / -1; }
+@media (max-width: 699px) { .exp-grid-offset:has(> .empty) { grid-auto-columns: 100%; } }
+.exp-chip { max-width: calc(100% - 24px); }
+.exp-chip:not(.chip-select) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+.exp-body h3, .cal-info h3 { overflow-wrap: break-word; }
+.cal-spark { width: 22px; height: 22px; }

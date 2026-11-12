@@ -39,6 +39,7 @@
           <a class="more" href="select.html">¿Prefieres tu propia fecha? Mira Select <span data-icon="arrow"></span></a>
         </div>
         <div id="cal"></div>
+        <noscript><p class="empty">Para ver el calendario, activa JavaScript en tu navegador. También puedes preguntarnos por <a class="text-link" href="https://wa.me/523321570254">WhatsApp al 33 2157 0254</a>.</p></noscript>
       </div>
     </section>
   </main>
@@ -61,7 +62,7 @@
       return `<section class="cal-month"><h2>${title}</h2><div class="cal-list">${items.map(e => {
         const d = e.fecha ? new Date(e.fecha + 'T12:00:00') : null;
         const exact = e.fecha && /\b\d{1,2}\b/.test(e.fechaTexto);
-        const box = d ? `<b>${exact ? d.getDate() : '—'}</b><small>${fmtMon.format(d).replace('.', '')}</small>` : `<b>✦</b><small>Pronto</small>`;
+        const box = d ? `<b>${exact ? d.getDate() : '—'}</b><small>${fmtMon.format(d).replace('.', '')}</small>` : `${ENRUI.icon('spark', 'cal-spark')}<small>Pronto</small>`;
         const cat = ENR.categorias[e.categoria]?.nombre || '';
         return `<article class="cal-item">
           <div class="cal-date" aria-hidden="true">${box}</div>
@@ -72,7 +73,7 @@
             : `<a class="btn btn-secondary" href="${ENRUI.wa('Hola Enrúmbate, avísenme cuando haya fecha para: ' + e.titulo)}" target="_blank" rel="noopener">${ENRUI.icon('wa', 'btn-icon')} Avísame<span class="sr-only"> cuando haya fecha, por WhatsApp</span></a>`}
         </article>`; }).join('')}</div></section>`;
     }).join('');
-    document.getElementById('cal').innerHTML = html;
+    document.getElementById('cal').innerHTML = html || ENRUI.emptyMsg('Estamos armando las próximas salidas.');
   })();
   </script>
 </body>

@@ -47,7 +47,9 @@
           <div class="filter-row" id="f-cat"><span class="lbl">Tipo</span></div>
         </div>
         <h2 class="sr-only">Resultados</h2>
-        <div class="exp-grid" id="exp-results" aria-live="polite"></div>
+        <p class="results-count" id="exp-count" role="status"></p>
+        <div class="exp-grid" id="exp-results"></div>
+        <noscript><p class="empty">Para ver y filtrar las experiencias, activa JavaScript en tu navegador. También puedes preguntarnos por <a class="text-link" href="https://wa.me/523321570254">WhatsApp al 33 2157 0254</a>.</p></noscript>
         <p class="empty" id="exp-empty" hidden>Aún no hay experiencias de este tipo publicadas. <a class="text-link" href="https://wa.me/523321570254" data-wa="Hola Enrúmbate, busco una experiencia que no veo en la página">Pídenos una por WhatsApp</a>.</p>
       </div>
     </section>
@@ -59,18 +61,21 @@
   (function () {
     const params = new URLSearchParams(location.search);
     const state = { linea: params.get('linea') || '', cat: params.get('cat') || '' };
+    if (!['originales', 'select'].includes(state.linea)) state.linea = '';
     const catRow = document.getElementById('f-cat');
     const used = [...new Set(ENR.experiencias.map(e => e.categoria))];
     const keys = Object.keys(ENR.categorias).filter(k => used.includes(k));
+    if (!keys.includes(state.cat)) state.cat = '';
     catRow.insertAdjacentHTML('beforeend', `<button class="chip-btn" data-cat="" aria-pressed="false">Todos</button>` +
       keys.map(k => `<button class="chip-btn" data-cat="${k}" aria-pressed="false">${ENR.categorias[k].nombre}</button>`).join(''));
-    const out = document.getElementById('exp-results'), empty = document.getElementById('exp-empty');
+    const out = document.getElementById('exp-results'), empty = document.getElementById('exp-empty'), count = document.getElementById('exp-count');
     function render() {
       document.querySelectorAll('#f-linea .chip-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.linea === state.linea));
       document.querySelectorAll('#f-cat .chip-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.cat === state.cat));
       const list = ENR.experiencias.filter(e => ENRUI.vigente(e) && (!state.linea || e.linea === state.linea) && (!state.cat || e.categoria === state.cat)).sort(ENRUI.byDate);
       out.innerHTML = list.map(ENRUI.card).join('');
       empty.hidden = list.length > 0;
+      count.textContent = list.length === 1 ? '1 experiencia' : `${list.length} experiencias`;
       const q = new URLSearchParams(); if (state.linea) q.set('linea', state.linea); if (state.cat) q.set('cat', state.cat);
       history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : ''));
     }

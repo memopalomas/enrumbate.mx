@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.10 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.11 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -219,6 +219,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.11 | 2026-11-12 | COM-13, COM-16, COM-17, COM-18 | Casos límite: formulario de contacto con error visible junto al campo Nombre (no solo la burbuja del navegador), fecha legible en el mensaje (“sábado, 5 de diciembre de 2026”), sin fechas pasadas, límites de largo, aviso tras enviar con enlace por si WhatsApp no se abrió y respaldo si el navegador bloquea la pestaña; sin botón flotante en Contacto. Listas vacías con mensaje y salida a WhatsApp (inicio, Originales, Select, calendario); aviso si no hay JavaScript; foto que no carga queda como fondo de color; filtros ignoran parámetros inválidos; conteo de resultados anunciado a lectores de pantalla en vez de releer todas las tarjetas; un solo bloque de “reducir movimiento”; ícono dibujado en lugar del glifo ✦ en el calendario |
 | v0.10 | 2026-11-12 | COM-14, COM-16, RET-10, RET-12 | Adaptación a celular y tablet: áreas táctiles de 44px (pie, “ver más”, filtros, créditos); filtros en una sola línea deslizable con desvanecido; puntos de posición en el carrusel de “Próximas fechas”; tira de categorías con icono arriba en 5 columnas desde 700px y en 2 columnas limpias en celular (1 columna bajo 360px), sin cortar palabras; héroe del inicio lado a lado con el celular en horizontal. Arreglo: la foto del héroe del inicio salía de 1100px de alto en celular |
 | v0.9 | 2026-11-12 | TIP-01, TIP-02, LOG-02, LOG-03 | Rendimiento: fotos en WebP a su tamaño (cards 640px, héroes con srcset), logos en WebP de 160px, fuentes alojadas en el sitio (assets/fonts, subconjunto latino) con precarga, espacio reservado para el header (sin saltos al cargar). Arreglo: la tira de beneficios ya no tapa el botón del héroe en móvil |
 | v0.8 | 2026-11-12 | MAR-01, MAR-02, RET-10, RET-12, RET-13, COM-01, COM-04, COM-08, LOG-07, COL-28 | Crítica de diseño (impeccable): inicio con foto en pin (MAR-01, RET-10), camino punteado (COM-08), tarjetas desfasadas (RET-12), proceso con intro fija (RET-13) y preguntas frecuentes. Eyebrow (COM-04) solo en el héroe del inicio. Foco navy en fondos claros, amarillo sobre navy. Énfasis amarillo sobre navy. Se quita la marca de agua girada (LOG-07). Nuevo COL-28 turquesa 600 para hover de Select. Botón flotante de WhatsApp en móvil |
