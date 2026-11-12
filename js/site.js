@@ -103,7 +103,7 @@
       </div>
       <div class="container footer-bottom">
         <span>© 2026 Enrúmbate · Descubre. Vive. Repite.</span>
-        <a href="#top">Volver arriba <span aria-hidden="true">↑</span></a>
+        <a class="to-top" href="#top">Volver arriba ${icon('arrow')}</a>
       </div>
       <details class="container footer-credits" id="creditos"><summary>Créditos de fotos</summary><p>Imágenes ilustrativas vía Wikimedia Commons, recortadas: ${cred}.</p></details>
     </footer>`;

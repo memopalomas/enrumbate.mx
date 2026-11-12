@@ -64,12 +64,17 @@
     .road-bg .r1 { stroke: rgba(234,12,123,.35); stroke-width: 2; stroke-dasharray: 2 14; }
     .road-bg .r2 { stroke: rgba(141,164,199,.18); stroke-width: 1.5; }
     .stars { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-    .stars i { position: absolute; color: var(--yellow-400); font-style: normal; opacity: .7; animation: twinkle 3s ease-in-out infinite; }
+    .stars svg { position: absolute; fill: var(--yellow-400); opacity: .7; animation: twinkle 3s ease-in-out infinite; }
+    .stars .s1 { top: 14%; left: 58%; width: 18px; height: 18px; }
+    .stars .s2 { top: 72%; left: 8%; width: 14px; height: 14px; animation-delay: .8s; }
+    .stars .s3 { top: 22%; left: 12%; width: 12px; height: 12px; animation-delay: 1.6s; }
+    .stars .s4 { top: 84%; left: 64%; width: 16px; height: 16px; animation-delay: 2.2s; }
     @keyframes twinkle { 50% { opacity: .2; } }
 
     .soon .social a { color: var(--cream-50); }
     .soon-contact { display: inline-flex; gap: var(--space-5); flex-wrap: wrap; }
     .soon .brand span { color: var(--cream-50); }
+    .btn-icon { width: 18px; height: 18px; flex: none; }
     .soon-contact .text-link { display: inline-flex; align-items: center; min-height: 44px; }
   </style>
 </head>
@@ -80,10 +85,10 @@
       <path class="r1" d="M-40 820 C 300 700, 220 580, 520 530 S 920 580, 1040 430 S 1300 240, 1500 260"/>
     </svg>
     <div class="stars" aria-hidden="true">
-      <i style="top:14%;left:58%;font-size:14px">✦</i>
-      <i style="top:72%;left:8%;font-size:10px;animation-delay:.8s">✦</i>
-      <i style="top:22%;left:12%;font-size:8px;animation-delay:1.6s">✦</i>
-      <i style="top:84%;left:64%;font-size:12px;animation-delay:2.2s">✦</i>
+      <svg class="s1" viewBox="0 0 24 24"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"/></svg>
+      <svg class="s2" viewBox="0 0 24 24"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"/></svg>
+      <svg class="s3" viewBox="0 0 24 24"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"/></svg>
+      <svg class="s4" viewBox="0 0 24 24"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"/></svg>
     </div>
 
     <header class="container soon-top">
@@ -112,7 +117,7 @@
               <div class="progress-track"><div class="progress-bar"></div></div>
             </div>
             <div class="soon-actions">
-              <a class="btn btn-primary" href="https://wa.me/523321570254?text=Hola%20Enr%C3%BAmbate%2C%20quiero%20armar%20un%20plan" target="_blank" rel="noopener">Cuéntanos tu idea <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn-primary" href="https://wa.me/523321570254?text=Hola%20Enr%C3%BAmbate%2C%20quiero%20armar%20un%20plan" target="_blank" rel="noopener">Cuéntanos tu idea <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
               <a class="btn btn-secondary" href="https://www.facebook.com/profile.php?id=61596060353610" target="_blank" rel="noopener">Síguenos en Facebook</a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.11 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.12 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -68,6 +68,16 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `COL-43` | `--cream-100` | `#ECE9E1` | Bandas alternas |
 | `COL-44` | `--ink-500` | `#4A5670` | Texto secundario |
 | `COL-45` | `--line` | `#D9D5CA` | Bordes y divisores |
+| `COL-46` | `--line-soft` | línea al 70 % | Borde del header |
+| `COL-47` | `--surface-glass` | arena al 90 % | Fondo translúcido del header |
+| `COL-60` | `--on-dark-text` | arena al 84 % | Texto secundario sobre navy (bajadas, pasos, pie) |
+| `COL-61` | `--on-dark-line` | arena al 14 % | Bordes y divisores sobre navy |
+| `COL-62` | `--on-dark-fill` | arena al 6 % | Relleno de tarjetas sobre navy |
+| `COL-63` | `--on-dark-fill-hover` | arena al 10 % | Hover sobre navy |
+| `COL-64` | `--scrim-hero-side` | degradado navy → transparente | Velo lateral de héroes con foto (desktop) |
+| `COL-65` | `--scrim-hero-top` | degradado navy de arriba abajo | Velo de héroes con foto (móvil) |
+| `COL-66` | `--scrim-panel` | navy al 85 % | Tira de beneficios sobre foto |
+| `COL-67` | `--scrim-panel-soft` | navy al 55 % | Pasos del proceso sobre el camino |
 
 ### 2.3 Reglas de color
 
@@ -98,8 +108,10 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `TIP-12` | `--fs-h3` | 22 → 28px | Fraunces 600 | 1.2 | Tarjetas, pasos |
 | `TIP-13` | `--fs-lead` | 18 → 22px | Manrope 500 | 1.5 | Bajadas |
 | `TIP-14` | `--fs-body` | 16 → 17px | Manrope 400 | 1.65 | Párrafos |
+| `TIP-17` | `--fs-ui` | 15px | Manrope 500 | 1.3 | Menú, tiras, etiquetas de campo, texto de tarjeta |
 | `TIP-15` | `--fs-small` | 14px | Manrope 500 | 1.5 | Notas, captions |
-| `TIP-16` | `--fs-eyebrow` | 13px | Manrope 700, MAYÚSCULAS, +0.14em | 1.2 | Pre-títulos |
+| `TIP-16` | `--fs-caption` (`--fs-eyebrow`) | 13px | Manrope 600–700 | 1.2 | Chips de foto, créditos, etiquetas en mayúsculas |
+| `TIP-18` | `--fs-micro` | 12px | Manrope 700, MAYÚSCULAS | 1 | Lema bajo la marca, “Próxima salida”, mes del calendario |
 
 | ID | Regla |
 |---|---|
@@ -157,7 +169,11 @@ Composiciones en desktop:
 | `FOR-03` | `--radius-lg` | 28px | Bloque de contacto |
 | `FOR-04` | `--radius-pin` | 999 999 999 24px | Foto principal en forma de pin |
 | `FOR-05` | `--radius-pill` | 999px | Botones |
-| `FOR-06` | `--shadow-card` | sombra azulada suave | Tarjetas, foto principal |
+| `FOR-06` | `--shadow-card` | sombra azulada suave | Tarjetas |
+| `FOR-09` | `--shadow-float` | sombra azulada marcada | Botón flotante de WhatsApp |
+| `FOR-10` | `--shadow-drop` | sombra hacia abajo | Menú móvil abierto |
+| `FOR-11` | `--shadow-photo` / `--shadow-badge` | sombra oscura profunda | Foto en pin y etiqueta “Próxima salida” |
+| `FOR-12` | `--glow-spark` | brillo amarillo | Estrella junto a la foto principal |
 | `FOR-07` | `--ease` / `--dur` | curva suave · 220ms | Hover y foco |
 | `FOR-08` | — | — | Con “reducir movimiento” activado se apagan animaciones y la cinta |
 
@@ -219,6 +235,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.12 | 2026-11-12 | COL-46, COL-47, COL-60…67, FOR-09…12, TIP-16…18 | Pulido: los colores sueltos (transparencias sobre navy, velos de foto, header) y las sombras pasan a tokens con ID; tamaños de letra sueltos pasan a la escala (nuevos TIP-17 15px y TIP-18 12px); valores de “Lo que nos mueve” alineados arriba; botón de tarjeta en dos líneas centrado y con aire; flechas y estrellas dibujadas en lugar de caracteres (↗, ↑, ✦) en la página en construcción y el pie |
 | v0.11 | 2026-11-12 | COM-13, COM-16, COM-17, COM-18 | Casos límite: formulario de contacto con error visible junto al campo Nombre (no solo la burbuja del navegador), fecha legible en el mensaje (“sábado, 5 de diciembre de 2026”), sin fechas pasadas, límites de largo, aviso tras enviar con enlace por si WhatsApp no se abrió y respaldo si el navegador bloquea la pestaña; sin botón flotante en Contacto. Listas vacías con mensaje y salida a WhatsApp (inicio, Originales, Select, calendario); aviso si no hay JavaScript; foto que no carga queda como fondo de color; filtros ignoran parámetros inválidos; conteo de resultados anunciado a lectores de pantalla en vez de releer todas las tarjetas; un solo bloque de “reducir movimiento”; ícono dibujado en lugar del glifo ✦ en el calendario |
 | v0.10 | 2026-11-12 | COM-14, COM-16, RET-10, RET-12 | Adaptación a celular y tablet: áreas táctiles de 44px (pie, “ver más”, filtros, créditos); filtros en una sola línea deslizable con desvanecido; puntos de posición en el carrusel de “Próximas fechas”; tira de categorías con icono arriba en 5 columnas desde 700px y en 2 columnas limpias en celular (1 columna bajo 360px), sin cortar palabras; héroe del inicio lado a lado con el celular en horizontal. Arreglo: la foto del héroe del inicio salía de 1100px de alto en celular |
 | v0.9 | 2026-11-12 | TIP-01, TIP-02, LOG-02, LOG-03 | Rendimiento: fotos en WebP a su tamaño (cards 640px, héroes con srcset), logos en WebP de 160px, fuentes alojadas en el sitio (assets/fonts, subconjunto latino) con precarga, espacio reservado para el header (sin saltos al cargar). Arreglo: la tira de beneficios ya no tapa el botón del héroe en móvil |
