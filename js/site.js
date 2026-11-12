@@ -167,6 +167,31 @@
     });
   }
 
+  /* ---------- Deslizables en celular: puntos del carrusel y desvanecido de filtros ---------- */
+  function scrollers() {
+    document.querySelectorAll('.exp-grid-offset').forEach(el => {
+      const n = el.children.length; if (n < 2) return;
+      const dots = document.createElement('div');
+      dots.className = 'carousel-dots'; dots.setAttribute('aria-hidden', 'true');
+      dots.innerHTML = '<span></span>'.repeat(n);
+      el.after(dots);
+      const upd = () => {
+        const w = el.firstElementChild.getBoundingClientRect().width || 1;
+        const max = el.scrollWidth - el.clientWidth;
+        const i = el.scrollLeft >= max - 4 ? n - 1 : Math.round(el.scrollLeft / w);
+        dots.querySelectorAll('span').forEach((d, k) => d.classList.toggle('on', k === i));
+      };
+      el.addEventListener('scroll', () => requestAnimationFrame(upd), { passive: true });
+      upd();
+    });
+    document.querySelectorAll('.filter-row').forEach(el => {
+      const upd = () => el.classList.toggle('at-end', el.scrollLeft >= el.scrollWidth - el.clientWidth - 4);
+      el.addEventListener('scroll', upd, { passive: true });
+      addEventListener('resize', upd, { passive: true });
+      requestAnimationFrame(upd);
+    });
+  }
+
   /* ---------- Menú móvil ---------- */
   function navToggle() {
     const t = document.querySelector('.nav-toggle'), n = document.getElementById('main-nav');
@@ -204,6 +229,7 @@
   }
   renderCats();
   renderLists();
+  scrollers();
   waLinks();
   navToggle();
 

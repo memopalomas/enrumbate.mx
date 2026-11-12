@@ -286,7 +286,7 @@
 .noscript-nav { display: flex; flex-wrap: wrap; gap: var(--space-3); padding-block: var(--space-4); font-weight: 700; }
 
 .ico { display: inline-block; vertical-align: middle; }
-.cat-item span, .benefit span { min-width: 0; overflow-wrap: anywhere; }
+.cat-item span, .benefit span { min-width: 0; overflow-wrap: break-word; }
 @media (max-width: 640px) { .cat-item, .benefit { padding: var(--space-4); gap: var(--space-2); font-size: .875rem; } .cat-item .ico, .benefit .ico { width: 26px; height: 26px; } }
 
 /* ---------- Variantes (antes estilos sueltos en el HTML) ---------- */
@@ -400,3 +400,75 @@ h1.page-title { font-size: var(--fs-h2); }
 /* La tira de beneficios sube 64px sobre el héroe: el héroe deja ese espacio libre */
 .hero-dark:has(+ .strip) .hero-inner { padding-bottom: calc(clamp(56px, 9vw, 120px) + var(--space-8)); }
 @media (max-width: 640px) { .strip-inner > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
+
+/* ---------- Adaptación a pantallas y dedos (v0.10) ---------- */
+/* Áreas táctiles de 44px en enlaces sueltos (pie, "ver más", filtros) */
+.footer-nav { gap: 0; }
+.footer-nav a, .footer-contact .text-link, .footer-bottom a, .section-head .more { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+.footer-contact { row-gap: var(--space-1, 4px); }
+.footer-credits summary { display: flex; align-items: center; gap: 6px; min-height: 44px; }
+.footer-credits summary::-webkit-details-marker { display: none; }
+.footer-credits summary::before { content: ""; width: 0; height: 0; border-block: 5px solid transparent; border-left: 7px solid currentColor; transition: transform var(--dur) var(--ease); }
+.footer-credits[open] summary::before { transform: rotate(90deg); }
+.footer-credits summary { list-style: none; }
+.chip-btn { min-height: 44px; }
+
+/* Tira de categorías: de 700px en adelante, icono arriba y 5 columnas iguales (sin cortar palabras) */
+@media (min-width: 700px) {
+  .strip-cats .strip-inner { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+  .strip-cats .cat-item { flex-direction: column; text-align: center; gap: var(--space-2); padding-inline: var(--space-3); }
+}
+
+/* Filtros en celular: cada fila es una sola línea que se desliza, con desvanecido que avisa que hay más */
+@media (max-width: 699px) {
+  .filters { gap: var(--space-3); }
+  .filter-row {
+    flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none;
+    margin-inline: calc(var(--margin) * -1); padding: 2px var(--margin);
+    scroll-padding-inline: var(--margin);
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
+            mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
+  }
+  .filter-row.at-end { -webkit-mask-image: none; mask-image: none; }
+  .filter-row::-webkit-scrollbar { display: none; }
+  .filter-row > * { flex: none; }
+  .filter-row .lbl { min-width: 0; }
+}
+
+/* Carrusel de "Próximas fechas" en celular: puntos que indican posición */
+.carousel-dots { display: none; }
+@media (max-width: 699px) {
+  .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: var(--space-2); }
+  .carousel-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--navy-300); transition: width var(--dur) var(--ease), background var(--dur) var(--ease); }
+  .carousel-dots span.on { width: 22px; border-radius: 4px; background: var(--magenta-600); }
+}
+
+/* Celular horizontal: el héroe del inicio pone foto y texto lado a lado para no empujar el botón fuera de vista */
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 640px) {
+  .hero-pin-grid { grid-template-columns: 3fr 2fr; padding-block: var(--space-7); }
+  .hero-figure { width: min(100%, 240px); }
+  .hero-copy h1 { font-size: clamp(2rem, 4.6vw, 2.75rem); }
+  .hero-next { left: -16px; bottom: 16px; }
+}
+/* Pantallas muy angostas (320px): marca y foto más contenidas */
+@media (max-width: 359px) {
+  .brand-tag small { font-size: .625rem; letter-spacing: .08em; }
+  .hero-figure { width: 82%; }
+  .hero-next { left: -12px; max-width: 200px; }
+}
+/* Tiras en celular: 2 columnas fijas con divisiones limpias (la última, si queda sola, ocupa la fila) */
+@media (max-width: 699px) {
+  .strip-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .strip-inner > * { border-right: 0; border-bottom: 1px solid var(--line); }
+  .strip-inner > :nth-child(odd):not(:last-child) { border-right: 1px solid var(--line); }
+  .strip-inner > :last-child, .strip-inner > :nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+  .strip-inner > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .strip-dark .strip-inner > * { border-color: rgba(245,244,240,.12); }
+}
+@media (max-width: 359px) {
+  .strip-inner { grid-template-columns: 1fr; }
+  .strip-inner > * { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+  .strip-dark .strip-inner > * { border-color: rgba(245,244,240,.12); }
+  .strip-inner > :nth-last-child(2):nth-child(odd) { border-bottom-width: 1px; border-bottom-style: solid; }
+  .strip-inner > :last-child { border-bottom: 0; }
+}
