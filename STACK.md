@@ -4,7 +4,7 @@
 - HTML + CSS + JavaScript sin frameworks ni build.
 - Datos de experiencias en `js/data.js`; header, footer y tarjetas en `js/site.js`.
 - Tokens y componentes en `css/styles.css` y `css/site.css`, documentados en `designsystem.md` / `designsystem.html`.
-- Fuentes: Fraunces y Manrope (de Google Fonts, licencia OFL) alojadas en `assets/fonts/` y precargadas.
+- Fuentes: Montserrat (de Google Fonts, licencia OFL) alojadas en `assets/fonts/` y precargadas.
 - Imágenes en WebP (las tarjetas a 640px; héroes con `srcset`). Los `.jpg`/`.png` originales se conservan como fuente.
 - Deploy: GitHub Actions → FTP a `public_html` en cada push a `main`.
 

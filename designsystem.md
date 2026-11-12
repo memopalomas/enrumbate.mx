@@ -27,7 +27,7 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `MAR-02` | **Trayecto** | El camino en “S” | Curvas, líneas punteadas en S, composición asimétrica |
 | `MAR-03` | **Chispa** | La estrella | Acentos amarillos puntuales (✦), nunca como fondo grande |
 | `MAR-04` | **Dos líneas** | Referencias de la clienta | **Originales de Enrúmbate** (sociales y accesibles, color Rumba) y **Enrúmbate Select** (exclusivas y privadas, color Select) |
-| `MAR-05` | **Eslogan** | Referencias de la clienta | “Descubre. Vive. Repite.” bajo el nombre en header y footer |
+| `MAR-05` | **Eslogan** | Referencias de la clienta | “Rumbo a tu siguiente experiencia” bajo el nombre en header y footer (dato de la clienta, v0.13) |
 
 ---
 
@@ -96,26 +96,28 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 
 | ID | Rol | Familia | Pesos | Por qué |
 |---|---|---|---|---|
-| `TIP-01` | Titulares | **Fraunces** (Google Fonts, alojada en `assets/fonts/`) | 600, 700 + itálica | Serif con curvas suaves (eje SOFT) que hacen eco del camino del logo |
-| `TIP-02` | Texto / UI | **Manrope** (Google Fonts, alojada en `assets/fonts/`) | 400, 500, 700 | Sans amable y muy legible en móvil |
+| `TIP-01` | Titulares | **Montserrat** (Google Fonts, alojada en `assets/fonts/`) | 600, 700 + itálica | Indicada por la clienta para todo el sitio |
+| `TIP-02` | Texto / UI | **Montserrat** | 400, 500, 700 | Misma familia en distintos grosores. Alternativa permitida por la clienta: Rustica (no se usa por ahora; Montserrat es la preferida) |
+| `TIP-03` | Nombre en el logo | **ENRÚMBATE** en mayúsculas, Montserrat Bold 700, tracking 30 (`--track-brand: .03em`) | 700 | Manual de la clienta |
+| `TIP-04` | Eslogan bajo el nombre | “Rumbo a tu siguiente experiencia”, Montserrat Medium 500, tracking 77 (`--track-slogan: .077em`) | 500 | Manual de la clienta. En celular baja a 10px (9px bajo 360px) para caber en una línea |
 
 ### Escala (fluida móvil → desktop)
 
 | ID | Token | Tamaño | Familia / peso | Interlineado | Uso |
 |---|---|---|---|---|---|
-| `TIP-10` | `--fs-display` | 44 → 88px | Fraunces 700 | 1.0 | H1 |
-| `TIP-11` | `--fs-h2` | 34 → 56px | Fraunces 600 | 1.08 | Títulos de sección |
-| `TIP-12` | `--fs-h3` | 22 → 28px | Fraunces 600 | 1.2 | Tarjetas, pasos |
-| `TIP-13` | `--fs-lead` | 18 → 22px | Manrope 500 | 1.5 | Bajadas |
-| `TIP-14` | `--fs-body` | 16 → 17px | Manrope 400 | 1.65 | Párrafos |
-| `TIP-17` | `--fs-ui` | 15px | Manrope 500 | 1.3 | Menú, tiras, etiquetas de campo, texto de tarjeta |
-| `TIP-15` | `--fs-small` | 14px | Manrope 500 | 1.5 | Notas, captions |
-| `TIP-16` | `--fs-caption` (`--fs-eyebrow`) | 13px | Manrope 600–700 | 1.2 | Chips de foto, créditos, etiquetas en mayúsculas |
-| `TIP-18` | `--fs-micro` | 12px | Manrope 700, MAYÚSCULAS | 1 | Lema bajo la marca, “Próxima salida”, mes del calendario |
+| `TIP-10` | `--fs-display` | 44 → 88px | Montserrat 700 | 1.0 | H1 |
+| `TIP-11` | `--fs-h2` | 34 → 56px | Montserrat 600 | 1.08 | Títulos de sección |
+| `TIP-12` | `--fs-h3` | 22 → 28px | Montserrat 600 | 1.2 | Tarjetas, pasos |
+| `TIP-13` | `--fs-lead` | 18 → 22px | Montserrat 500 | 1.5 | Bajadas |
+| `TIP-14` | `--fs-body` | 16 → 17px | Montserrat 400 | 1.65 | Párrafos |
+| `TIP-17` | `--fs-ui` | 15px | Montserrat 500 | 1.3 | Menú, tiras, etiquetas de campo, texto de tarjeta |
+| `TIP-15` | `--fs-small` | 14px | Montserrat 500 | 1.5 | Notas, captions |
+| `TIP-16` | `--fs-caption` (`--fs-eyebrow`) | 13px | Montserrat 600–700 | 1.2 | Chips de foto, créditos, etiquetas en mayúsculas |
+| `TIP-18` | `--fs-micro` | 12px | Montserrat 700, MAYÚSCULAS (500 para el eslogan, TIP-04) | 1 | Eslogan bajo la marca, “Próxima salida”, mes del calendario |
 
 | ID | Regla |
 |---|---|
-| `TIP-20` | Una sola palabra clave por título en *Fraunces itálica* magenta (amarilla sobre navy) |
+| `TIP-20` | Una sola palabra clave por título en *Montserrat itálica* magenta (amarilla sobre navy) |
 | `TIP-21` | Párrafos de 45–70 caracteres por línea |
 | `TIP-22` | Mayúsculas solo en eyebrows |
 
@@ -186,7 +188,7 @@ Composiciones en desktop:
 | `LOG-01` | `assets/logo.jpg` | Original (2000×2000, fondo arena) |
 | `LOG-02` | `assets/logo-mark.png` | Isotipo transparente sobre fondos claros |
 | `LOG-03` | `assets/logo-mark-light.png` | Isotipo con trazo claro sobre navy |
-| `LOG-04` | Lockup | Isotipo + “Enrúmbate” en Fraunces 700, separación 12px |
+| `LOG-04` | Lockup | Isotipo + “ENRÚMBATE” (TIP-03), separación 12px |
 | `LOG-05` | Área de protección | Ancho de la estrella alrededor del isotipo |
 | `LOG-06` | Tamaño mínimo | 28px de alto |
 | `LOG-07` | No permitido | Rotar, recolorear el camino, sombras, sobre fotos sin velo |
@@ -199,13 +201,13 @@ Composiciones en desktop:
 
 | ID | Componente | Especificación |
 |---|---|---|
-| `COM-01` | Botón primario | Fondo `COL-22`, texto blanco Manrope 700 16px, 14×28px, `FOR-05`. Hover `COL-21` + flecha ↗ se mueve. Foco: contorno amarillo 3px |
+| `COM-01` | Botón primario | Fondo `COL-22`, texto blanco Montserrat 700 16px, 14×28px, `FOR-05`. Hover `COL-21` + flecha ↗ se mueve. Foco: contorno amarillo 3px |
 | `COM-02` | Botón secundario | Borde 2px navy, texto navy. Hover: relleno navy, texto arena. Sobre navy se invierte |
 | `COM-03` | Enlace de texto | Navy 700 bold con subrayado amarillo de 2px, separado 4px del texto; hover subrayado magenta |
 | `COM-04` | Eyebrow | ✦ + texto `TIP-16` en `COL-21`; sobre navy en amarillo. Solo para el eslogan en el héroe del inicio; no encima de cada título |
-| `COM-05` | Cinta de categorías | *En desuso desde v0.4 (era del primer inicio).* Fraunces itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
+| `COM-05` | Cinta de categorías | *En desuso desde v0.4 (era del primer inicio).* Fraunces (ya retirada) itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
 | `COM-06` | Tarjeta de experiencia v1 | *Reemplazada por `COM-13` en v0.4.* |
-| `COM-07` | Paso numerado | Número Fraunces amarillo, H3 arena, caja translúcida sobre navy |
+| `COM-07` | Paso numerado | Número Montserrat amarillo, H3 arena, caja translúcida sobre navy |
 | `COM-08` | Camino decorativo | Línea punteada magenta en S detrás de secciones navy |
 | `COM-09` | Iconos de contacto | Círculo 44px con borde; hover relleno magenta. WhatsApp, Facebook, Instagram |
 | `COM-10` | Header | Fijo, fondo arena translúcido; lockup con eslogan; menú Inicio · Experiencias · Originales · Select · Calendario · Nosotros · Contacto; botón “Hablemos” a WhatsApp. Debajo de 1100px, menú desplegable |
@@ -235,6 +237,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.13 | 2026-11-12 | TIP-01…04, TIP-10…18, TIP-20, LOG-04, MAR-05 | Tipografía de la clienta: todo el sitio en Montserrat (sustituye a Fraunces y Manrope). Nombre ENRÚMBATE en mayúsculas, Bold, tracking 30; eslogan nuevo “Rumbo a tu siguiente experiencia” en Medium, tracking 77 (header, pie, inicio). Contenido: se quita Punta Pérula (no existe por ahora); Pub Crawl y Tour Gótico pasan a “Próximamente” porque por ahora solo hay transporte a Morat y la Fan Party en Rakata |
 | v0.12 | 2026-11-12 | COL-46, COL-47, COL-60…67, FOR-09…12, TIP-16…18 | Pulido: los colores sueltos (transparencias sobre navy, velos de foto, header) y las sombras pasan a tokens con ID; tamaños de letra sueltos pasan a la escala (nuevos TIP-17 15px y TIP-18 12px); valores de “Lo que nos mueve” alineados arriba; botón de tarjeta en dos líneas centrado y con aire; flechas y estrellas dibujadas en lugar de caracteres (↗, ↑, ✦) en la página en construcción y el pie |
 | v0.11 | 2026-11-12 | COM-13, COM-16, COM-17, COM-18 | Casos límite: formulario de contacto con error visible junto al campo Nombre (no solo la burbuja del navegador), fecha legible en el mensaje (“sábado, 5 de diciembre de 2026”), sin fechas pasadas, límites de largo, aviso tras enviar con enlace por si WhatsApp no se abrió y respaldo si el navegador bloquea la pestaña; sin botón flotante en Contacto. Listas vacías con mensaje y salida a WhatsApp (inicio, Originales, Select, calendario); aviso si no hay JavaScript; foto que no carga queda como fondo de color; filtros ignoran parámetros inválidos; conteo de resultados anunciado a lectores de pantalla en vez de releer todas las tarjetas; un solo bloque de “reducir movimiento”; ícono dibujado en lugar del glifo ✦ en el calendario |
 | v0.10 | 2026-11-12 | COM-14, COM-16, RET-10, RET-12 | Adaptación a celular y tablet: áreas táctiles de 44px (pie, “ver más”, filtros, créditos); filtros en una sola línea deslizable con desvanecido; puntos de posición en el carrusel de “Próximas fechas”; tira de categorías con icono arriba en 5 columnas desde 700px y en 2 columnas limpias en celular (1 columna bajo 360px), sin cortar palabras; héroe del inicio lado a lado con el celular en horizontal. Arreglo: la foto del héroe del inicio salía de 1100px de alto en celular |

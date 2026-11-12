@@ -56,7 +56,7 @@ window.ENR = {
     { id: "pub-crawl-gdl", linea: "originales", categoria: "nocturna", etiqueta: "Vida nocturna",
       titulo: "Pub Crawl Guadalajara",
       desc: "Una noche recorriendo varios bares de Guadalajara en grupo.",
-      fecha: "2027-01-15", fechaTexto: "Enero 2027", lugar: "GDL",
+      fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
       img: "assets/img/exp/bares.webp", alt: "Coctel iluminado con luces neón en un bar", inicio: true },
 
     { id: "cata-vino-mexicano", linea: "originales", categoria: "catas", etiqueta: "Cata",
@@ -65,11 +65,6 @@ window.ENR = {
       fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
       img: "assets/img/exp/vino.webp", alt: "Vino tinto cayendo en una copa junto a una garrafa", inicio: true },
 
-    { id: "punta-perula", linea: "originales", categoria: "escapadas", etiqueta: "Escapada",
-      titulo: "Punta Pérula y Cancuncito",
-      desc: "Salida a la costa de Jalisco, a dos playas de mar tranquilo.",
-      fecha: "2026-11-22", fechaTexto: "22 de noviembre 2026", lugar: "Costa de Jalisco",
-      img: "assets/img/exp/punta-perula.webp", alt: "Atardecer en la playa de Punta Pérula", inicio: true },
 
     { id: "cata-cerveza", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata de cerveza de importación",
@@ -92,7 +87,7 @@ window.ENR = {
     { id: "tour-gotico", linea: "originales", categoria: "recorridos", etiqueta: "Recorrido",
       titulo: "Tour Gótico ZMG",
       desc: "Recorrido por las leyendas y los templos neogóticos de Guadalajara.",
-      fecha: "2027-01-22", fechaTexto: "Enero 2027", lugar: "GDL",
+      fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
       img: "assets/img/exp/tour-gotico.webp", alt: "Templo Expiatorio de Guadalajara, de estilo neogótico" },
 
     /* ---------- Enrúmbate Select ---------- */
@@ -131,7 +126,6 @@ window.ENR = {
     ["DFC 4574 Late-night drinks in Pattaya", "PattayaPatrol", "CC BY-SA 4.0"],
     ["Templo Expiatorio del Santísimo Sacramento (Guadalajara) - exterior", "Nheyob", "CC BY-SA 4.0"],
     ["Catedral de Guadalajara en la noche", "Alejan98", "CC0"],
-    ["Playa punta perula", "Mariocrespolara", "CC BY 4.0"],
     ["DSC 7112 Dinner table with red wine and candlelight", "PattayaPatrol", "CC BY-SA 4.0"],
     ["Endless Water (Unsplash)", "Alex Bertha", "CC0"],
     ["Callejones de Guanajuato", "Daniel Arturo Fabián Sánchez", "CC BY-SA 4.0"],

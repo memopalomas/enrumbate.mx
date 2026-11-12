@@ -13,8 +13,8 @@
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: var(--space-5); }
 .brand-tag .brand-words { display: grid; gap: 4px; }
-.brand-tag .brand-name { font: 700 1.5rem/1 var(--font-display); font-variation-settings: "SOFT" 100; letter-spacing: -0.02em; }
-.brand-tag small { font: 700 var(--fs-micro)/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--magenta-700); }
+.brand-tag .brand-name { font: 700 1.5rem/1 var(--font-display); letter-spacing: var(--track-brand); text-transform: uppercase; }
+.brand-tag small { font: 500 var(--fs-micro)/1 var(--font-body); letter-spacing: var(--track-slogan); color: var(--magenta-700); white-space: nowrap; }
 .on-dark .brand-tag small { color: var(--yellow-400); }
 .main-nav { display: flex; align-items: center; gap: var(--space-1); }
 .main-nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: var(--fs-ui); padding: 8px 12px; border-radius: var(--radius-pill); transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
@@ -80,7 +80,7 @@
 .line-pill { display: inline-block; font: 800 1rem/1 var(--font-body); letter-spacing: .2em; text-transform: uppercase; padding: 9px 16px; border-radius: var(--radius-pill); }
 .line-pill.originales { background: var(--magenta-600); color: var(--white); font-style: italic; letter-spacing: .06em; font-size: 1.125rem; }
 .line-pill.select { border: 2px solid var(--cyan-500); color: var(--cyan-500); }
-.line-lockup .of { font: 700 1.5rem/1 var(--font-display); font-variation-settings: "SOFT" 100; }
+.line-lockup .of { font: 700 1.5rem/1 var(--font-display); }
 
 /* ---------- Tira de beneficios / categorías ---------- */
 .strip { position: relative; z-index: 2; margin-top: calc(var(--space-8) * -1); }
@@ -167,7 +167,7 @@
 /* ---------- Pasos (COM-07) ---------- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
 .steps li { display: grid; gap: var(--space-3); padding: var(--space-6); border-radius: var(--radius-md); background: var(--on-dark-fill); border: 1px solid var(--on-dark-line); }
-.step-num { font: 700 3rem/1 var(--font-display); font-variation-settings: "SOFT" 100; color: var(--yellow-400); }
+.step-num { font: 700 3rem/1 var(--font-display); color: var(--yellow-400); }
 .steps p { color: var(--on-dark-text); }
 
 /* ---------- CTA final ---------- */
@@ -206,7 +206,7 @@
 }
 @media (min-width: 700px) { .cal-item { grid-template-columns: 76px 120px 1fr auto; } }
 .cal-date { display: grid; place-items: center; align-content: center; height: 76px; border-radius: 12px; background: var(--navy-700); color: var(--cream-50); text-align: center; }
-.cal-date b { font: 700 1.75rem/1 var(--font-display); font-variation-settings: "SOFT" 100; color: var(--yellow-400); }
+.cal-date b { font: 700 1.75rem/1 var(--font-display); color: var(--yellow-400); }
 .cal-date small { font-size: var(--fs-micro); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .cal-thumb { display: none; }
 @media (min-width: 700px) { .cal-thumb { display: block; width: 120px; height: 76px; object-fit: cover; border-radius: 12px; } }
@@ -316,7 +316,7 @@ h1.page-title { font-size: var(--fs-h2); }
 }
 .hero-next:hover { transform: translateY(-3px); }
 .hero-next small { font-size: var(--fs-micro); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--magenta-700); }
-.hero-next b { font: 700 1.125rem/1.2 var(--font-display); font-variation-settings: "SOFT" 100; }
+.hero-next b { font: 700 1.125rem/1.2 var(--font-display); }
 .hero-next span { font-size: var(--fs-small); color: var(--ink-500); }
 .hero-path, .band-path { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .hero-path path, .band-path path { fill: none; stroke: var(--magenta-500); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 12; vector-effect: non-scaling-stroke; opacity: .85; }
@@ -447,9 +447,17 @@ h1.page-title { font-size: var(--fs-h2); }
   .hero-copy h1 { font-size: clamp(2rem, 4.6vw, 2.75rem); }
   .hero-next { left: -16px; bottom: 16px; }
 }
+/* Celular: el eslogan baja de tamaño para caber en una línea junto al menú */
+@media (max-width: 480px) {
+  .header-inner { gap: var(--space-3); }
+  .brand-tag small { font-size: .625rem; }
+}
 /* Pantallas muy angostas (320px): marca y foto más contenidas */
 @media (max-width: 359px) {
-  .brand-tag small { font-size: .625rem; letter-spacing: .08em; }
+  .brand-tag { gap: var(--space-2); }
+  .brand-tag img { height: 36px; }
+  .brand-tag .brand-name { font-size: 1.25rem; }
+  .brand-tag small { font-size: .5625rem; }
   .hero-figure { width: 82%; }
   .hero-next { left: -12px; max-width: 200px; }
 }

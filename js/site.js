@@ -60,7 +60,7 @@
       <div class="container header-inner">
         <a class="brand brand-tag" href="inicio.html" aria-label="Enrúmbate, inicio">
           <img src="assets/logo-mark.webp" alt="" width="34" height="44">
-          <span class="brand-words"><span class="brand-name">Enrúmbate</span><small>Descubre. Vive. Repite.</small></span>
+          <span class="brand-words"><span class="brand-name">Enrúmbate</span><small>Rumbo a tu siguiente experiencia</small></span>
         </a>
         <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
           ${links}
@@ -82,7 +82,7 @@
         <div class="footer-brand">
           <a class="brand brand-tag" href="inicio.html">
             <img src="assets/logo-mark-light.webp" alt="" width="34" height="44">
-            <span class="brand-words"><span class="brand-name">Enrúmbate</span><small>Descubre. Vive. Repite.</small></span>
+            <span class="brand-words"><span class="brand-name">Enrúmbate</span><small>Rumbo a tu siguiente experiencia</small></span>
           </a>
           <p>Planes memorables, con todo el gusto de vivirlos. Experiencias en México y durante tus viajes.</p>
         </div>
@@ -102,7 +102,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        <span>© 2026 Enrúmbate · Descubre. Vive. Repite.</span>
+        <span>© 2026 Enrúmbate · Rumbo a tu siguiente experiencia</span>
         <a class="to-top" href="#top">Volver arriba ${icon('arrow')}</a>
       </div>
       <details class="container footer-credits" id="creditos"><summary>Créditos de fotos</summary><p>Imágenes ilustrativas vía Wikimedia Commons, recortadas: ${cred}.</p></details>
