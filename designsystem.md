@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.7 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.8 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -59,6 +59,7 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `COL-25` | `--cyan-800` | `#0B6E7A` | Texto Select sobre fondo claro (5.4 : 1) |
 | `COL-26` | `--cyan-500` | `#19C2D6` | = COL-05 |
 | `COL-27` | `--cyan-100` | `#DDF6F9` | Fondos suaves, tarjeta Select |
+| `COL-28` | `--cyan-600` | `#14A9BB` | Hover del botón Select (texto navy) |
 | `COL-31` | `--yellow-600` | `#C9A514` | Reserva |
 | `COL-32` | `--yellow-400` | `#F3D036` | = COL-03 |
 | `COL-33` | `--yellow-100` | `#FBF1C4` | Fondos suaves |
@@ -185,7 +186,7 @@ Composiciones en desktop:
 | `COM-01` | Botón primario | Fondo `COL-22`, texto blanco Manrope 700 16px, 14×28px, `FOR-05`. Hover `COL-21` + flecha ↗ se mueve. Foco: contorno amarillo 3px |
 | `COM-02` | Botón secundario | Borde 2px navy, texto navy. Hover: relleno navy, texto arena. Sobre navy se invierte |
 | `COM-03` | Enlace de texto | Navy 700 bold con subrayado amarillo de 2px, separado 4px del texto; hover subrayado magenta |
-| `COM-04` | Eyebrow | ✦ + texto `TIP-16` en `COL-21`; sobre navy en amarillo |
+| `COM-04` | Eyebrow | ✦ + texto `TIP-16` en `COL-21`; sobre navy en amarillo. Solo para el eslogan en el héroe del inicio; no encima de cada título |
 | `COM-05` | Cinta de categorías | *En desuso desde v0.4 (era del primer inicio).* Fraunces itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
 | `COM-06` | Tarjeta de experiencia v1 | *Reemplazada por `COM-13` en v0.4.* |
 | `COM-07` | Paso numerado | Número Fraunces amarillo, H3 arena, caja translúcida sobre navy |
@@ -218,6 +219,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.8 | 2026-11-12 | MAR-01, MAR-02, RET-10, RET-12, RET-13, COM-01, COM-04, COM-08, LOG-07, COL-28 | Crítica de diseño (impeccable): inicio con foto en pin (MAR-01, RET-10), camino punteado (COM-08), tarjetas desfasadas (RET-12), proceso con intro fija (RET-13) y preguntas frecuentes. Eyebrow (COM-04) solo en el héroe del inicio. Foco navy en fondos claros, amarillo sobre navy. Énfasis amarillo sobre navy. Se quita la marca de agua girada (LOG-07). Nuevo COL-28 turquesa 600 para hover de Select. Botón flotante de WhatsApp en móvil |
 | v0.7 | 2026-11-12 | MAR-04, VOZ-04 | Textos v1: textos del sitio reescritos con VOZ-04; antes/después con IDs TXT-xx en textos.html |
 | v0.6 | 2026-11-12 | VOZ-04 | Revisión de copy con criterios antislop: se agrega regla contra relleno promocional |
 | v0.5 | 2026-11-12 | COM-03 | Subrayado de enlaces más delgado: de 6px a 2px |

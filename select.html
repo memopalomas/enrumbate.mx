@@ -25,8 +25,9 @@
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body id="top">
-  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+  <a class="sr-only skip-link" href="#contenido">Saltar al contenido</a>
   <div id="site-header" data-active="select"></div>
+  <noscript><nav class="container noscript-nav" aria-label="Navegación"><a href="inicio.html">Inicio</a><a href="experiencias.html">Experiencias</a><a href="calendario.html">Calendario</a><a href="contacto.html">Contacto</a><a href="https://wa.me/523321570254">WhatsApp 33 2157 0254</a></nav></noscript>
   <main id="contenido">
 
     <section class="hero-dark hero-select on-dark" aria-labelledby="hero-title">
@@ -35,7 +36,7 @@
         <div class="hero-inner">
           <div class="line-lockup">
             <img src="assets/logo-mark-light.png" alt="" width="54" height="72">
-            <div class="lbl"><span class="of">Enrúmbate</span><span class="line-pill select">Select</span></div>
+            <div class="lbl"><span class="of">Enrúmbate</span><span class="line-pill select"><span data-icon="crown" class="pill-ico"></span>Select</span></div>
           </div>
           <h1 id="hero-title">Planes privados, <em>a tu medida</em>.</h1>
           <p class="lead">Viajes, catas, cenas y recorridos para celebrar con tu pareja, tu familia, tus amigos o tu equipo.</p>
@@ -61,8 +62,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">A tu medida</p>
-            <h2 id="exp-title">Experiencias <em class="spark" style="color:var(--cyan-800)">Select</em></h2>
+            <h2 id="exp-title">Experiencias <em class="spark spark-select">Select</em></h2>
             <p>Tú eliges fecha, destino y compañía. Nosotros armamos el itinerario, las reservas y los traslados.</p>
           </div>
         </div>
@@ -74,14 +74,12 @@
       <div class="container">
         <div class="cta-card">
           <div>
-            <p class="eyebrow">Hecho para ti</p>
             <h2 id="cta-title">¿Tienes algo especial en mente?</h2>
             <p>Aniversarios, propuestas de matrimonio, viajes de celebración. Cuéntanos la idea y la diseñamos contigo.</p>
           </div>
           <div class="actions">
-            <a class="btn btn-select" data-wa="Hola Enrúmbate, quiero diseñar una experiencia Select"><span data-icon="wa" class="btn-icon"></span> Diseñar mi experiencia</a>
+            <a class="btn btn-select" href="https://wa.me/523321570254" data-wa="Hola Enrúmbate, quiero diseñar una experiencia Select"><span data-icon="wa" class="btn-icon"></span> Diseñar mi experiencia</a>
           </div>
-          <img class="pin-bg" src="assets/logo-mark.png" alt="" width="200" height="265">
         </div>
       </div>
     </section>

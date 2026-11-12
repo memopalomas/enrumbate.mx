@@ -25,16 +25,16 @@
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body id="top">
-  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+  <a class="sr-only skip-link" href="#contenido">Saltar al contenido</a>
   <div id="site-header" data-active="calendario"></div>
+  <noscript><nav class="container noscript-nav" aria-label="Navegación"><a href="inicio.html">Inicio</a><a href="experiencias.html">Experiencias</a><a href="calendario.html">Calendario</a><a href="contacto.html">Contacto</a><a href="https://wa.me/523321570254">WhatsApp 33 2157 0254</a></nav></noscript>
   <main id="contenido">
 
     <section class="section-tight" aria-labelledby="page-title">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Agenda</p>
-            <h1 id="page-title" style="font-size:var(--fs-h2)">Calendario de experiencias</h1>
+            <h1 id="page-title" class="page-title">Calendario de experiencias</h1>
             <p>Aparta tu lugar con tiempo: los cupos son limitados.</p>
           </div>
           <a class="more" href="select.html">¿Prefieres tu propia fecha? Mira Select <span data-icon="arrow"></span></a>
@@ -50,7 +50,7 @@
   (function () {
     const fmtM = new Intl.DateTimeFormat('es-MX', { month: 'long', year: 'numeric' });
     const fmtMon = new Intl.DateTimeFormat('es-MX', { month: 'short' });
-    const list = ENR.experiencias.filter(e => e.linea === 'originales').sort(ENRUI.byDate);
+    const list = ENR.experiencias.filter(e => e.linea === 'originales' && ENRUI.vigente(e)).sort(ENRUI.byDate);
     const groups = new Map();
     list.forEach(e => {
       const k = e.fecha ? e.fecha.slice(0, 7) : 'pronto';
@@ -68,7 +68,9 @@
           <div class="cal-date" aria-hidden="true">${box}</div>
           <img class="cal-thumb" src="${e.img}" alt="" loading="lazy">
           <div class="cal-info"><span class="tag">${ENRUI.esc(cat)}</span><h3>${ENRUI.esc(e.titulo)}</h3><span>${ENRUI.esc(e.fechaTexto)} · ${ENRUI.esc(e.lugar)}</span></div>
-          <a class="btn btn-primary" href="${ENRUI.wa('Hola Enrúmbate, quiero apartar lugar en: ' + e.titulo + ' · ' + e.fechaTexto)}" target="_blank" rel="noopener">Apartar lugar</a>
+          ${e.fecha
+            ? `<a class="btn btn-primary" href="${ENRUI.wa('Hola Enrúmbate, quiero apartar lugar en: ' + e.titulo + ' · ' + e.fechaTexto)}" target="_blank" rel="noopener">${ENRUI.icon('wa', 'btn-icon')} Apartar lugar<span class="sr-only"> por WhatsApp</span></a>`
+            : `<a class="btn btn-secondary" href="${ENRUI.wa('Hola Enrúmbate, avísenme cuando haya fecha para: ' + e.titulo)}" target="_blank" rel="noopener">${ENRUI.icon('wa', 'btn-icon')} Avísame<span class="sr-only"> cuando haya fecha, por WhatsApp</span></a>`}
         </article>`; }).join('')}</div></section>`;
     }).join('');
     document.getElementById('cal').innerHTML = html;

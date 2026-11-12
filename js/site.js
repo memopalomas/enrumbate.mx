@@ -67,7 +67,7 @@
           <a class="btn btn-primary nav-cta" href="${wa()}" target="_blank" rel="noopener">${icon('wa', 'btn-icon')} Hablemos</a>
         </nav>
         <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
-          <span class="sr-only">Abrir menú</span><span class="bars" aria-hidden="true"></span>
+          <span class="sr-only" data-lbl>Abrir menú</span><span class="bars" aria-hidden="true"></span>
         </button>
       </div>
     </header>`;
@@ -105,7 +105,7 @@
         <span>© 2026 Enrúmbate · Descubre. Vive. Repite.</span>
         <a href="#top">Volver arriba <span aria-hidden="true">↑</span></a>
       </div>
-      <div class="container footer-credits" id="creditos"><p>Imágenes ilustrativas vía Wikimedia Commons, recortadas: ${cred}.</p></div>
+      <details class="container footer-credits" id="creditos"><summary>Créditos de fotos</summary><p>Imágenes ilustrativas vía Wikimedia Commons, recortadas: ${cred}.</p></details>
     </footer>`;
   }
 
@@ -113,7 +113,11 @@
   function card(e) {
     const sel = e.linea === 'select';
     const chip = sel ? `<span class="exp-chip chip-select">${icon('crown')} Select</span>` : `<span class="exp-chip">${esc(e.etiqueta)}</span>`;
-    const txt = `Hola Enrúmbate, me interesa: ${e.titulo}${sel ? ' (Select)' : ''} · ${e.fechaTexto}`;
+    const conFecha = !!e.fecha;
+    const txt = sel ? `Hola Enrúmbate, quiero cotizar: ${e.titulo} (Select)`
+      : conFecha ? `Hola Enrúmbate, quiero apartar lugar en: ${e.titulo} · ${e.fechaTexto}`
+      : `Hola Enrúmbate, avísenme cuando haya fecha para: ${e.titulo}`;
+    const cta = sel ? ['btn-select', 'Cotizar'] : conFecha ? ['btn-primary', 'Apartar lugar'] : ['btn-secondary', 'Avísame cuando haya fecha'];
     return `
     <article class="exp-card ${sel ? 'is-select' : 'is-originales'}" data-linea="${e.linea}" data-cat="${e.categoria}">
       <div class="exp-media"><img src="${e.img}" alt="${esc(e.alt)}" loading="lazy" width="800" height="600">${chip}</div>
@@ -125,7 +129,7 @@
           <li>${icon('pin')}<span>${esc(e.lugar)}</span></li>
           ${e.precio ? `<li>${icon('ticket')}<span>${esc(e.precio)}</span></li>` : ''}
         </ul>
-        <a class="btn ${sel ? 'btn-select' : 'btn-primary'} exp-cta" href="${wa(txt)}" target="_blank" rel="noopener">${sel ? 'Cotizar' : 'Reservar'} ${icon('arrow', 'btn-icon')}</a>
+        <a class="btn ${cta[0]} exp-cta" href="${wa(txt)}" target="_blank" rel="noopener">${icon('wa', 'btn-icon')} ${cta[1]}<span class="sr-only"> por WhatsApp (se abre en otra pestaña)</span></a>
       </div>
     </article>`;
   }
@@ -134,8 +138,9 @@
      <div data-exp-list data-linea="originales" data-inicio="true" data-limit="4"></div> */
   function renderLists() {
     document.querySelectorAll('[data-exp-list]').forEach(el => {
-      let list = ENR.experiencias.slice();
+      let list = ENR.experiencias.filter(vigente);
       const d = el.dataset;
+      if (d.conFecha) list = list.filter(e => e.fecha);
       if (d.linea) list = list.filter(e => e.linea === d.linea);
       if (d.inicio) list = list.filter(e => e.inicio);
       if (d.orden === 'fecha') list.sort(byDate);
@@ -143,6 +148,9 @@
       el.innerHTML = list.map(card).join('');
     });
   }
+  /* Oculta experiencias cuya última fecha ya pasó */
+  const hoy = (() => { const n = new Date(); return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`; })();
+  function vigente(e) { const fin = e.fechaFin || e.fecha; return !fin || fin >= hoy; }
   function byDate(a, b) {
     if (a.fecha && b.fecha) return a.fecha.localeCompare(b.fecha);
     return a.fecha ? -1 : b.fecha ? 1 : 0;
@@ -163,14 +171,17 @@
   function navToggle() {
     const t = document.querySelector('.nav-toggle'), n = document.getElementById('main-nav');
     if (!t) return;
-    t.addEventListener('click', () => {
-      const open = t.getAttribute('aria-expanded') === 'true';
-      t.setAttribute('aria-expanded', String(!open));
-      document.body.classList.toggle('nav-open', !open);
+    const lbl = t.querySelector('[data-lbl]');
+    const set = open => {
+      t.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open);
+      lbl.textContent = open ? 'Cerrar menú' : 'Abrir menú';
+    };
+    t.addEventListener('click', () => set(t.getAttribute('aria-expanded') !== 'true'));
+    n.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+    document.addEventListener('keydown', ev => {
+      if (ev.key === 'Escape' && t.getAttribute('aria-expanded') === 'true') { set(false); t.focus(); }
     });
-    n.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      t.setAttribute('aria-expanded', 'false'); document.body.classList.remove('nav-open');
-    }));
   }
 
   /* ---------- Enlaces WhatsApp declarativos: <a data-wa="texto"> ---------- */
@@ -186,10 +197,15 @@
   if (h) h.outerHTML = header(h.dataset.active);
   const f = document.getElementById('site-footer');
   if (f) f.outerHTML = footer();
+  /* Botón flotante de WhatsApp (móvil y tablet) */
+  if (!document.body.classList.contains('no-fab')) {
+    document.body.insertAdjacentHTML('beforeend',
+      `<a class="wa-fab" href="${wa()}" target="_blank" rel="noopener">${icon('wa')}<span>Escríbenos</span><span class="sr-only"> por WhatsApp</span></a>`);
+  }
   renderCats();
   renderLists();
   waLinks();
   navToggle();
 
-  window.ENRUI = { icon, wa, card, esc, byDate };
+  window.ENRUI = { icon, wa, card, esc, byDate, vigente };
 })();

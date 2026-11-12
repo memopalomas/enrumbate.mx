@@ -10,6 +10,7 @@
    - categoria   clave de ENR.categorias
    - titulo, desc
    - fecha       "AAAA-MM-DD" (primera fecha) o null si aún no hay
+   - fechaFin    (opcional) última fecha; la experiencia se oculta sola al día siguiente
    - fechaTexto  cómo se muestra la fecha
    - lugar
    - precio      (opcional) texto de precio, p. ej. "$450 por persona"
@@ -31,7 +32,7 @@ window.ENR = {
     "nocturna":     { nombre: "Vida nocturna y bares",  corto: "Vida nocturna",         icono: "cheers" },
     "recorridos":   { nombre: "Recorridos temáticos",   corto: "Rutas temáticas",       icono: "route" },
     "catas":        { nombre: "Catas y sabores",        corto: "Catas y sabores",       icono: "glass" },
-    "escapadas":    { nombre: "Escapadas",              corto: "Viajes nacionales",     icono: "plane" },
+    "escapadas":    { nombre: "Escapadas",              corto: "Escapadas",             icono: "plane" },
     "internacional":{ nombre: "Viajes internacionales", corto: "Viajes internacionales",icono: "palm" },
     "cenas":        { nombre: "Cenas especiales",       corto: "Cenas especiales",      icono: "dish" },
     "privadas":     { nombre: "Experiencias privadas",  corto: "Experiencias privadas", icono: "people" }
@@ -43,14 +44,14 @@ window.ENR = {
       titulo: "¡Rumbo a Morat!",
       desc: "Te llevamos a la Arena VFG y te traemos de regreso. Incluye aire acondicionado, música de Morat en el camino, seguro de viajero, agua, snack y un regalo. Salidas desde Gran Terraza Oblatos, Parque Rojo y Centro Sur.",
       precio: "$450 por persona · 3 por $1,260 · Aparta con $250",
-      fecha: "2026-11-20", fechaTexto: "20 y 21 de noviembre 2026", lugar: "Arena VFG, GDL",
-      img: "assets/img/exp/conciertos.jpg", alt: "Banda en concierto bajo luces de escenario", inicio: true },
+      fecha: "2026-11-20", fechaFin: "2026-11-21", fechaTexto: "20 y 21 de noviembre 2026", lugar: "Arena VFG, GDL",
+      img: "assets/img/exp/arena.jpg", alt: "Público de un estadio con las luces de sus celulares encendidas", inicio: true },
 
     { id: "morat-fan-party", linea: "originales", categoria: "conciertos", etiqueta: "Fan party",
       titulo: "Morat Fan Party: ¡La noche es nuestra!",
       desc: "Una noche para cantar y bailar Morat con otros fans, con cóctel de bienvenida y regalos. Evento de fans, no oficial. Solo mayores de edad.",
       fecha: "2026-11-28", fechaTexto: "Sábado 28 de noviembre 2026 · 9:00 p. m.", lugar: "Rakata Chapultepec, GDL",
-      img: "assets/img/exp/bares.jpg", alt: "Coctel iluminado con luces neón en un bar", inicio: true },
+      img: "assets/img/exp/fan-party.jpg", alt: "Chica sonriendo en una fiesta con gente bailando detrás", inicio: true },
 
     { id: "pub-crawl-gdl", linea: "originales", categoria: "nocturna", etiqueta: "Vida nocturna",
       titulo: "Pub Crawl Guadalajara",
@@ -62,7 +63,7 @@ window.ENR = {
       titulo: "Cata de vino mexicano",
       desc: "Una selección de vinos de distintas regiones de México.",
       fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
-      img: "assets/img/exp/vino.jpg", alt: "Copa de vino tinto con quesos", inicio: true },
+      img: "assets/img/exp/vino.jpg", alt: "Vino tinto cayendo en una copa junto a una garrafa", inicio: true },
 
     { id: "punta-perula", linea: "originales", categoria: "escapadas", etiqueta: "Escapada",
       titulo: "Punta Pérula y Cancuncito",
@@ -134,6 +135,8 @@ window.ENR = {
     ["DSC 7112 Dinner table with red wine and candlelight", "PattayaPatrol", "CC BY-SA 4.0"],
     ["Endless Water (Unsplash)", "Alex Bertha", "CC0"],
     ["Callejones de Guanajuato", "Daniel Arturo Fabián Sánchez", "CC BY-SA 4.0"],
-    ["Schwappender Wein", "Stefan Krause", "CC BY 3.0 DE"]
+    ["Schwappender Wein", "Stefan Krause", "CC BY 3.0 DE"],
+    ["Audience raising mobile phones… in Luzhniki", "Alexander Grebenkov", "CC BY 3.0"],
+    ["Blurred background close up club crowd dance", "autor desconocido", "CC0"]
   ]
 };
