@@ -17,3 +17,10 @@ Sitio estático (HTML/CSS) de Enrúmbate.
 ## Deploy
 Cada push a `main` sube el sitio por FTP a `public_html` (`.github/workflows/deploy.yml`).
 Para borrar todo en el servidor y subir limpio: Actions → *Deploy FTP* → *Run workflow* → `clean = true`.
+
+## Pendientes
+- **Menú principal (7 enlaces):** evaluar juntar *Experiencias* y *Calendario* en una sola sección. Cambia la estructura del sitio; decidir con la clienta.
+- **Franja de confianza en el inicio:** fotos reales de salidas, reseñas o foto de quien está detrás de Enrúmbate (material de la clienta).
+- **Logo en vector (SVG/AI)** y versiones oficiales en claro y oscuro (LOG-02, LOG-03). Hoy `logo-mark.png` y `logo-mark-light.png` se recortaron de `logo.jpg`.
+- **Confirmaciones de la clienta:** los cambios marcados *Confirmar* en `textos.html` (anticipo, forma de pago, traslados, hospedaje, etc.).
+- **Historia real para Nosotros** (TXT-14) y precio de la Morat Fan Party.
