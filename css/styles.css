@@ -141,7 +141,7 @@ em.spark { font-style: italic; color: var(--color-accent); }
 
 .text-link {
   font-weight: 700; text-decoration: underline; text-decoration-color: var(--yellow-400);
-  text-decoration-thickness: 6px; text-underline-offset: 2px; text-decoration-skip-ink: none;
+  text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-skip-ink: none;
   transition: text-decoration-color var(--dur) var(--ease);
 }
 .text-link:hover { text-decoration-color: var(--magenta-500); }

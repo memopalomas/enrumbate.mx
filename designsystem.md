@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.4 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.5 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -184,7 +184,7 @@ Composiciones en desktop:
 |---|---|---|
 | `COM-01` | Botón primario | Fondo `COL-22`, texto blanco Manrope 700 16px, 14×28px, `FOR-05`. Hover `COL-21` + flecha ↗ se mueve. Foco: contorno amarillo 3px |
 | `COM-02` | Botón secundario | Borde 2px navy, texto navy. Hover: relleno navy, texto arena. Sobre navy se invierte |
-| `COM-03` | Enlace de texto | Navy 700 bold con subrayado amarillo de 6px; hover subrayado magenta |
+| `COM-03` | Enlace de texto | Navy 700 bold con subrayado amarillo de 2px, separado 4px del texto; hover subrayado magenta |
 | `COM-04` | Eyebrow | ✦ + texto `TIP-16` en `COL-21`; sobre navy en amarillo |
 | `COM-05` | Cinta de categorías | *En desuso desde v0.4 (era del primer inicio).* Fraunces itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
 | `COM-06` | Tarjeta de experiencia v1 | *Reemplazada por `COM-13` en v0.4.* |
@@ -217,6 +217,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.5 | 2026-11-12 | COM-03 | Subrayado de enlaces más delgado: de 6px a 2px |
 | v0.4 | 2026-11-12 | MAR-04, MAR-05, COL-05, COL-25…27, COL-54, COL-55, COM-10…18 | Referencias de la clienta: líneas Originales y Select, turquesa Select, eslogan, componentes de páginas nuevas |
 | v0.3 | 2026-11-12 | COM-09, COM-11 | Se agrega Instagram (@enrumbate.mx) |
 | v0.2 | 2026-11-12 | todos | IDs de referencia y página `/designsystem.html` |
