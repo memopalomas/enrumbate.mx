@@ -52,13 +52,13 @@ window.ENR = {
 
     { id: "cata-vino-mexicano", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata de vino mexicano",
-      desc: "Conoce lo mejor del vino hecho en México, copa por copa.",
+      desc: "Una selección de vinos de distintas regiones de México.",
       fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
       img: "assets/img/exp/vino.jpg", alt: "Copa de vino tinto con quesos", inicio: true },
 
     { id: "punta-perula", linea: "originales", categoria: "escapadas", etiqueta: "Escapada",
       titulo: "Punta Pérula y Cancuncito",
-      desc: "Escápate a la costa de Jalisco: playa, mar tranquilo y atardeceres.",
+      desc: "Salida a la costa de Jalisco, a dos playas de mar tranquilo.",
       fecha: "2026-11-22", fechaTexto: "22 de noviembre 2026", lugar: "Costa de Jalisco",
       img: "assets/img/exp/punta-perula.jpg", alt: "Atardecer en la playa de Punta Pérula", inicio: true },
 

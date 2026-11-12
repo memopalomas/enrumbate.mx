@@ -210,6 +210,7 @@ Composiciones en desktop:
 | `VOZ-01` | Tuteo, frases cortas, verbos de experiencia: vivir, descubrir, armar, disfrutar, enrumbarse |
 | `VOZ-02` | Evitar tecnicismos (“paquetes”, “cotización”) en titulares |
 | `VOZ-03` | Español de México |
+| `VOZ-04` | Decir qué hacemos en concreto (boletos, traslados, reservas). Evitar relleno promocional (“únicas”, “exclusivas”, “cuidadosamente”, “ideal”), tríos de adjetivos y frases de dos puntos con remate (“una idea sencilla: …”) |
 
 ---
 
@@ -217,6 +218,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.6 | 2026-11-12 | VOZ-04 | Revisión de copy con criterios antislop: se agrega regla contra relleno promocional |
 | v0.5 | 2026-11-12 | COM-03 | Subrayado de enlaces más delgado: de 6px a 2px |
 | v0.4 | 2026-11-12 | MAR-04, MAR-05, COL-05, COL-25…27, COL-54, COL-55, COM-10…18 | Referencias de la clienta: líneas Originales y Select, turquesa Select, eslogan, componentes de páginas nuevas |
 | v0.3 | 2026-11-12 | COM-09, COM-11 | Se agrega Instagram (@enrumbate.mx) |
