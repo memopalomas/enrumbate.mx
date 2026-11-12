@@ -20,11 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Acepta FTP_URL / FTPURL / FTP_SERVER con o sin "ftp://"
+      # FTP_URL puede venir con o sin "ftp://"
       - name: Resolver host FTP
         id: ftp
         env:
-          RAW: ${{ secrets.FTP_URL || secrets.FTPURL || secrets.FTP_SERVER || secrets.FTP_HOST }}
+          RAW: ${{ secrets.FTP_URL }}
         run: |
           host="${RAW#*://}"; host="${host%%/*}"
           if [ -z "$host" ]; then echo "::error::Falta el secret del servidor FTP"; exit 1; fi
@@ -34,8 +34,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ steps.ftp.outputs.host }}
-          username: ${{ secrets.FTP_USER || secrets.FTPUSER || secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASS || secrets.FTPPASS || secrets.FTP_PASSWORD }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: ./
           dangerous-clean-slate: ${{ github.event.inputs.clean == 'true' }}

@@ -2,8 +2,8 @@
 
 Sitio estático (HTML/CSS) de Enrúmbate.
 
-- `index.html` — Home
-- `construccion.html` — Página "muy pronto"
+- `index.html` — Página "muy pronto" (portada pública por ahora)
+- `inicio.html` — Home
 - `designsystem.md` — Colores, tipografía, retícula y componentes
 - `css/styles.css` — Tokens y componentes base · `css/home.css` — Home
 - `assets/` — Logo y fotos (créditos en el footer de la home)
