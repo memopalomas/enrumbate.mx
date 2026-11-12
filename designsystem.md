@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.5 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.6 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
