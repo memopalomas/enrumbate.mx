@@ -23,5 +23,6 @@ Para borrar todo en el servidor y subir limpio: Actions → *Deploy FTP* → *Ru
 - **Menú principal (7 enlaces):** evaluar juntar *Experiencias* y *Calendario* en una sola sección. Cambia la estructura del sitio; decidir con la clienta.
 - **Franja de confianza en el inicio:** fotos reales de salidas, reseñas o foto de quien está detrás de Enrúmbate (material de la clienta).
 - **Logo en vector (SVG/AI)** y versiones oficiales en claro y oscuro (LOG-02, LOG-03). Hoy `logo-mark.png` y `logo-mark-light.png` se recortaron de `logo.jpg`.
-- **Confirmaciones de la clienta:** los cambios marcados *Confirmar* en `textos.html` (anticipo, forma de pago, traslados, hospedaje, etc.).
+- **Confirmaciones de la clienta:** los cambios marcados *Confirmar* en `textos.html` (anticipo, traslados, hospedaje, etc.). La forma de pago ya está: transferencia por WhatsApp.
 - **Historia real para Nosotros** (TXT-14) y precio de la Morat Fan Party.
+- **Pago con tarjeta en línea:** la clienta lo está investigando. Cuando exista, cambiar TXT-43 (“¿Cómo pago?”) y los pasos del inicio.

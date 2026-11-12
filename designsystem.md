@@ -88,6 +88,7 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `COL-52` | El amarillo nunca como texto sobre fondo claro (1.4 : 1). Solo sobre navy (8.5 : 1) o como forma |
 | `COL-53` | Navy sobre Arena y viceversa: 11.7 : 1 (AAA) |
 | `COL-54` | Turquesa Select nunca con texto blanco (2.2 : 1). Botón Select = fondo `COL-05` + texto navy (6 : 1). Sobre fondo claro, texto en `COL-25` |
+| `COL-56` | **Fondos:** navy (Noche) para héroes, “Cómo funciona” y pie, donde la marca y la foto tienen que lucir y evocan la salida de noche; crema (Arena) para tarjetas, calendario, formularios y textos largos, donde se lee y se compara. Sin modo oscuro completo: las fotos y los precios se leen mejor en claro |
 | `COL-55` | Originales usa magenta; Select usa turquesa + corona amarilla. No mezclar acentos de ambas líneas en una misma tarjeta |
 
 ---
@@ -237,6 +238,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.14 | 2026-11-12 | COL-56, TXT-19, TXT-40, TXT-43 | Fondos: se mantiene la mezcla actual, navy para momentos de marca y crema para leer y elegir (COL-56; la clienta lo dejó a nuestro criterio). Pago: por ahora solo transferencia, coordinada por WhatsApp; pasos y preguntas del inicio lo dicen, con nueva pregunta “¿Cómo pago?” |
 | v0.13 | 2026-11-12 | TIP-01…04, TIP-10…18, TIP-20, LOG-04, MAR-05 | Tipografía de la clienta: todo el sitio en Montserrat (sustituye a Fraunces y Manrope). Nombre ENRÚMBATE en mayúsculas, Bold, tracking 30; eslogan nuevo “Rumbo a tu siguiente experiencia” en Medium, tracking 77 (header, pie, inicio). Contenido: se quita Punta Pérula (no existe por ahora); Pub Crawl y Tour Gótico pasan a “Próximamente” porque por ahora solo hay transporte a Morat y la Fan Party en Rakata |
 | v0.12 | 2026-11-12 | COL-46, COL-47, COL-60…67, FOR-09…12, TIP-16…18 | Pulido: los colores sueltos (transparencias sobre navy, velos de foto, header) y las sombras pasan a tokens con ID; tamaños de letra sueltos pasan a la escala (nuevos TIP-17 15px y TIP-18 12px); valores de “Lo que nos mueve” alineados arriba; botón de tarjeta en dos líneas centrado y con aire; flechas y estrellas dibujadas en lugar de caracteres (↗, ↑, ✦) en la página en construcción y el pie |
 | v0.11 | 2026-11-12 | COM-13, COM-16, COM-17, COM-18 | Casos límite: formulario de contacto con error visible junto al campo Nombre (no solo la burbuja del navegador), fecha legible en el mensaje (“sábado, 5 de diciembre de 2026”), sin fechas pasadas, límites de largo, aviso tras enviar con enlace por si WhatsApp no se abrió y respaldo si el navegador bloquea la pestaña; sin botón flotante en Contacto. Listas vacías con mensaje y salida a WhatsApp (inicio, Originales, Select, calendario); aviso si no hay JavaScript; foto que no carga queda como fondo de color; filtros ignoran parámetros inválidos; conteo de resultados anunciado a lectores de pantalla en vez de releer todas las tarjetas; un solo bloque de “reducir movimiento”; ícono dibujado en lugar del glifo ✦ en el calendario |
