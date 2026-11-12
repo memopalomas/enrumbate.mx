@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · Enrúmbate</title>
+  <meta name="description" content="Escríbenos por WhatsApp, correo o redes para armar tu próxima experiencia con Enrúmbate.">
+  <meta name="theme-color" content="#F5F4F0">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enrúmbate">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://enrumbate.mx/contacto.html">
+  <meta property="og:title" content="Contacto · Enrúmbate">
+  <meta property="og:description" content="Escríbenos por WhatsApp, correo o redes para armar tu próxima experiencia con Enrúmbate.">
+  <meta property="og:image" content="https://enrumbate.mx/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://enrumbate.mx/contacto.html">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600..700,100;1,9..144,600..700,100&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body id="top">
+  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+  <div id="site-header" data-active="contacto"></div>
+  <main id="contenido">
+
+    <section class="section-tight" aria-labelledby="page-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Contacto</p>
+            <h1 id="page-title" style="font-size:var(--fs-h2)">Cuéntanos qué se te antoja <em class="spark">vivir</em></h1>
+            <p>Llena los datos y te abrimos WhatsApp con tu mensaje listo para enviar.</p>
+          </div>
+        </div>
+        <div class="grid" style="row-gap:var(--space-6)">
+          <form class="form" id="wa-form" style="grid-column:1/-1" novalidate>
+            <div class="form-row">
+              <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" required></div>
+              <div class="field"><label for="f-exp">Experiencia</label><select id="f-exp" name="exp"></select></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="f-fecha">Fecha <small>(opcional)</small></label><input id="f-fecha" name="fecha" type="date"></div>
+              <div class="field"><label for="f-personas">Personas</label><input id="f-personas" name="personas" type="number" min="1" value="2" inputmode="numeric"></div>
+            </div>
+            <div class="field"><label for="f-msg">Mensaje <small>(opcional)</small></label><textarea id="f-msg" name="msg" placeholder="Ocasión, presupuesto, ideas…"></textarea></div>
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center">
+              <button class="btn btn-primary" type="submit"><span data-icon="wa" class="btn-icon"></span> Enviar por WhatsApp</button>
+              <p class="form-note">Se abrirá WhatsApp con tu mensaje; solo da clic en enviar.</p>
+            </div>
+          </form>
+          <aside class="contact-aside" style="grid-column:1/-1" aria-label="Otros medios">
+            <div class="form-row">
+              <a class="contact-tile" data-wa><span data-icon="wa"></span><div><b>WhatsApp</b><span>33 2157 0254</span></div></a>
+              <a class="contact-tile" href="mailto:hola@enrumbate.mx"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg><div><b>Correo</b><span>hola@enrumbate.mx</span></div></a>
+              <a class="contact-tile" href="https://www.instagram.com/enrumbate.mx" target="_blank" rel="noopener"><span data-icon="ig"></span><div><b>Instagram</b><span>@enrumbate.mx</span></div></a>
+              <a class="contact-tile" href="https://www.facebook.com/profile.php?id=61596060353610" target="_blank" rel="noopener"><span data-icon="fb"></span><div><b>Facebook</b><span>Enrúmbate</span></div></a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+  <script>
+  (function () {
+    const sel = document.getElementById('f-exp');
+    sel.innerHTML = '<option value="">Aún no sé, quiero ideas</option>' +
+      ['originales', 'select'].map(l => `<optgroup label="${l === 'select' ? 'Enrúmbate Select' : 'Originales de Enrúmbate'}">` +
+        ENR.experiencias.filter(e => e.linea === l).map(e => `<option value="${e.id}">${ENRUI.esc(e.titulo)}${e.fecha ? ' · ' + ENRUI.esc(e.fechaTexto) : ''}</option>`).join('') + '</optgroup>').join('');
+    const pre = new URLSearchParams(location.search).get('exp'); if (pre) sel.value = pre;
+    document.getElementById('wa-form').addEventListener('submit', ev => {
+      ev.preventDefault();
+      const f = ev.target, nombre = f.nombre.value.trim();
+      if (!nombre) { f.nombre.focus(); f.nombre.setCustomValidity('Escribe tu nombre'); f.nombre.reportValidity(); return; }
+      f.nombre.setCustomValidity('');
+      const e = ENR.experiencias.find(x => x.id === sel.value);
+      const lines = [`Hola Enrúmbate, soy ${nombre}.`,
+        e ? `Me interesa: ${e.titulo}${e.linea === 'select' ? ' (Select)' : ''}` : 'Quiero ideas para una experiencia.',
+        f.fecha.value ? `Fecha: ${f.fecha.value}` : '', `Personas: ${f.personas.value || 1}`,
+        f.msg.value.trim()].filter(Boolean);
+      window.open(ENRUI.wa(lines.join('\n')), '_blank', 'noopener');
+    });
+  })();
+  </script>
+</body>
+</html>

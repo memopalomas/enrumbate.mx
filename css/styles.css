@@ -12,6 +12,9 @@
   --magenta-600: #CC0A6B;
   --magenta-500: #EA0C7B;
   --magenta-100: #FCE0EE;
+  --cyan-800: #0B6E7A;
+  --cyan-500: #19C2D6;
+  --cyan-100: #DDF6F9;
   --yellow-600: #C9A514;
   --yellow-400: #F3D036;
   --yellow-100: #FBF1C4;
@@ -32,6 +35,8 @@
   --color-spark: var(--yellow-400);
   --color-inverse-bg: var(--navy-700);
   --color-inverse-text: var(--cream-50);
+  --color-originales: var(--magenta-500);
+  --color-select: var(--cyan-500);
 
   /* Tipografía */
   --font-display: "Fraunces", Georgia, serif;
@@ -127,6 +132,8 @@ em.spark { font-style: italic; color: var(--color-accent); }
 .btn:hover .arrow { transform: translate(3px,-3px); }
 .btn-primary { background: var(--magenta-600); color: var(--white); }
 .btn-primary:hover { background: var(--magenta-700); }
+.btn-select { background: var(--cyan-500); color: var(--navy-900); }
+.btn-select:hover { background: var(--cyan-100); }
 .btn-secondary { border-color: currentColor; color: var(--navy-700); }
 .btn-secondary:hover { background: var(--navy-700); color: var(--cream-50); border-color: var(--navy-700); }
 .on-dark .btn-secondary { color: var(--cream-50); }

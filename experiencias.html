@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experiencias · Enrúmbate</title>
+  <meta name="description" content="Todas las experiencias de Enrúmbate: conciertos, vida nocturna, recorridos, catas, escapadas, cenas y experiencias privadas.">
+  <meta name="theme-color" content="#F5F4F0">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enrúmbate">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://enrumbate.mx/experiencias.html">
+  <meta property="og:title" content="Experiencias · Enrúmbate">
+  <meta property="og:description" content="Todas las experiencias de Enrúmbate: conciertos, vida nocturna, recorridos, catas, escapadas, cenas y experiencias privadas.">
+  <meta property="og:image" content="https://enrumbate.mx/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://enrumbate.mx/experiencias.html">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600..700,100;1,9..144,600..700,100&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body id="top">
+  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+  <div id="site-header" data-active="experiencias"></div>
+  <main id="contenido">
+
+    <section class="section-tight" aria-labelledby="page-title">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:var(--space-6)">
+          <div>
+            <p class="eyebrow">Descubre. Vive. Repite.</p>
+            <h1 id="page-title" style="font-size:var(--fs-h2)">Todas las experiencias</h1>
+            <p>Filtra por línea o por lo que se te antoja vivir.</p>
+          </div>
+        </div>
+        <div class="filters" role="group" aria-label="Filtros">
+          <div class="filter-row" id="f-linea">
+            <span class="lbl">Línea</span>
+            <button class="chip-btn" data-linea="" aria-pressed="true">Todas</button>
+            <button class="chip-btn originales" data-linea="originales" aria-pressed="false">Originales</button>
+            <button class="chip-btn select" data-linea="select" aria-pressed="false">Select</button>
+          </div>
+          <div class="filter-row" id="f-cat"><span class="lbl">Tipo</span></div>
+        </div>
+        <div class="exp-grid" id="exp-results" aria-live="polite"></div>
+        <p class="empty" id="exp-empty" hidden>Aún no hay experiencias de este tipo publicadas. <a class="text-link" data-wa="Hola Enrúmbate, busco una experiencia que no veo en la página">Pídenos una por WhatsApp</a>.</p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+  <script>
+  (function () {
+    const params = new URLSearchParams(location.search);
+    const state = { linea: params.get('linea') || '', cat: params.get('cat') || '' };
+    const catRow = document.getElementById('f-cat');
+    const used = [...new Set(ENR.experiencias.map(e => e.categoria))];
+    const keys = Object.keys(ENR.categorias);
+    catRow.insertAdjacentHTML('beforeend', `<button class="chip-btn" data-cat="" aria-pressed="false">Todos</button>` +
+      keys.map(k => `<button class="chip-btn" data-cat="${k}" aria-pressed="false">${ENR.categorias[k].nombre}</button>`).join(''));
+    const out = document.getElementById('exp-results'), empty = document.getElementById('exp-empty');
+    function render() {
+      document.querySelectorAll('#f-linea .chip-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.linea === state.linea));
+      document.querySelectorAll('#f-cat .chip-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.cat === state.cat));
+      const list = ENR.experiencias.filter(e => (!state.linea || e.linea === state.linea) && (!state.cat || e.categoria === state.cat)).sort(ENRUI.byDate);
+      out.innerHTML = list.map(ENRUI.card).join('');
+      empty.hidden = list.length > 0;
+      const q = new URLSearchParams(); if (state.linea) q.set('linea', state.linea); if (state.cat) q.set('cat', state.cat);
+      history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : ''));
+    }
+    document.querySelector('.filters').addEventListener('click', e => {
+      const b = e.target.closest('.chip-btn'); if (!b) return;
+      if ('linea' in b.dataset) state.linea = b.dataset.linea;
+      if ('cat' in b.dataset) state.cat = b.dataset.cat;
+      render();
+    });
+    render();
+  })();
+  </script>
+</body>
+</html>

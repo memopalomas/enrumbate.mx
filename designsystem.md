@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.3 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.4 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -26,6 +26,8 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `MAR-01` | **Destino** | El pin | Esquinas redondeadas, forma “pin” en imágenes destacadas, navegación clara |
 | `MAR-02` | **Trayecto** | El camino en “S” | Curvas, líneas punteadas en S, composición asimétrica |
 | `MAR-03` | **Chispa** | La estrella | Acentos amarillos puntuales (✦), nunca como fondo grande |
+| `MAR-04` | **Dos líneas** | Referencias de la clienta | **Originales de Enrúmbate** (sociales y accesibles, color Rumba) y **Enrúmbate Select** (exclusivas y privadas, color Select) |
+| `MAR-05` | **Eslogan** | Referencias de la clienta | “Descubre. Vive. Repite.” bajo el nombre en header y footer |
 
 ---
 
@@ -39,6 +41,7 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `COL-02` | **Rumba** | `--magenta-500` | `#EA0C7B` | 234, 12, 123 | Acción y acentos: palabras destacadas, iconos |
 | `COL-03` | **Chispa** | `--yellow-400` | `#F3D036` | 243, 208, 54 | Detalles: estrella, subrayados, números sobre navy |
 | `COL-04` | **Arena** | `--cream-50` | `#F5F4F0` | 245, 244, 240 | Fondo general |
+| `COL-05` | **Select** | `--cyan-500` | `#19C2D6` | 25, 194, 214 | Color de la línea Select (botones con texto navy, acentos sobre navy) |
 
 ### 2.2 Escalas extendidas
 
@@ -52,7 +55,10 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `COL-21` | `--magenta-700` | `#B00A5D` | Hover de botón, eyebrows, texto magenta pequeño |
 | `COL-22` | `--magenta-600` | `#CC0A6B` | Fondo de botón primario |
 | `COL-23` | `--magenta-500` | `#EA0C7B` | = COL-02 |
-| `COL-24` | `--magenta-100` | `#FCE0EE` | Fondos suaves |
+| `COL-24` | `--magenta-100` | `#FCE0EE` | Fondos suaves, tarjeta Originales |
+| `COL-25` | `--cyan-800` | `#0B6E7A` | Texto Select sobre fondo claro (5.4 : 1) |
+| `COL-26` | `--cyan-500` | `#19C2D6` | = COL-05 |
+| `COL-27` | `--cyan-100` | `#DDF6F9` | Fondos suaves, tarjeta Select |
 | `COL-31` | `--yellow-600` | `#C9A514` | Reserva |
 | `COL-32` | `--yellow-400` | `#F3D036` | = COL-03 |
 | `COL-33` | `--yellow-100` | `#FBF1C4` | Fondos suaves |
@@ -70,6 +76,8 @@ El logo es un **pin de ubicación** con un **camino sinuoso** (navy + magenta) q
 | `COL-51` | Botones con fondo `COL-22` (5.5 : 1 con blanco, AA). `COL-02` puro solo en formas, iconos y titulares grandes (4.3 : 1) |
 | `COL-52` | El amarillo nunca como texto sobre fondo claro (1.4 : 1). Solo sobre navy (8.5 : 1) o como forma |
 | `COL-53` | Navy sobre Arena y viceversa: 11.7 : 1 (AAA) |
+| `COL-54` | Turquesa Select nunca con texto blanco (2.2 : 1). Botón Select = fondo `COL-05` + texto navy (6 : 1). Sobre fondo claro, texto en `COL-25` |
+| `COL-55` | Originales usa magenta; Select usa turquesa + corona amarilla. No mezclar acentos de ambas líneas en una misma tarjeta |
 
 ---
 
@@ -178,13 +186,20 @@ Composiciones en desktop:
 | `COM-02` | Botón secundario | Borde 2px navy, texto navy. Hover: relleno navy, texto arena. Sobre navy se invierte |
 | `COM-03` | Enlace de texto | Navy 700 bold con subrayado amarillo de 6px; hover subrayado magenta |
 | `COM-04` | Eyebrow | ✦ + texto `TIP-16` en `COL-21`; sobre navy en amarillo |
-| `COM-05` | Cinta de categorías | Fraunces itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
-| `COM-06` | Tarjeta de experiencia | Foto 4:5 `FOR-02`, número, H3 y frase. Hover: la foto sube 6px y gira levemente |
+| `COM-05` | Cinta de categorías | *En desuso desde v0.4 (era del primer inicio).* Fraunces itálica sobre banda navy inclinada −1.2°, separadas por ✦ amarillas, en movimiento |
+| `COM-06` | Tarjeta de experiencia v1 | *Reemplazada por `COM-13` en v0.4.* |
 | `COM-07` | Paso numerado | Número Fraunces amarillo, H3 arena, caja translúcida sobre navy |
 | `COM-08` | Camino decorativo | Línea punteada magenta en S detrás de secciones navy |
 | `COM-09` | Iconos de contacto | Círculo 44px con borde; hover relleno magenta. WhatsApp, Facebook, Instagram |
-| `COM-10` | Header | Fijo, fondo arena translúcido con desenfoque; en móvil menú desplegable |
-| `COM-11` | Footer | Fondo `COL-11`, lockup claro, correo, teléfono, WhatsApp, Facebook, Instagram |
+| `COM-10` | Header | Fijo, fondo arena translúcido; lockup con eslogan; menú Inicio · Experiencias · Originales · Select · Calendario · Nosotros · Contacto; botón “Hablemos” a WhatsApp. Debajo de 1100px, menú desplegable |
+| `COM-11` | Footer | Fondo `COL-11`, lockup claro con eslogan, menú, WhatsApp, correo, Facebook, Instagram, créditos de fotos |
+| `COM-12` | Tarjeta de línea | Bloque grande rosa (Originales) o turquesa claro (Select) con lockup, frase y enlace “Ver …” |
+| `COM-13` | Tarjeta de experiencia | Foto 4:3, chip de categoría (Select: corona amarilla sobre navy), título, descripción, fecha y lugar con iconos, botón “Reservar” (magenta) o “Cotizar” (turquesa) que abre WhatsApp con el nombre de la experiencia |
+| `COM-14` | Tira de categorías | Iconos de línea + nombre, enlazan a Experiencias filtradas |
+| `COM-15` | Héroe oscuro con foto | Foto a sangre con degradado navy desde la izquierda; palabra destacada en el color de la línea |
+| `COM-16` | Filtros | Chips por línea y por tipo; el activo se rellena con el color de la línea |
+| `COM-17` | Fila de calendario | Caja de fecha navy con día amarillo, miniatura, categoría, título y “Apartar lugar” |
+| `COM-18` | Formulario a WhatsApp | Campos nombre, experiencia, fecha, personas y mensaje; arma el texto y abre WhatsApp |
 
 ---
 
@@ -202,6 +217,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.4 | 2026-11-12 | MAR-04, MAR-05, COL-05, COL-25…27, COL-54, COL-55, COM-10…18 | Referencias de la clienta: líneas Originales y Select, turquesa Select, eslogan, componentes de páginas nuevas |
 | v0.3 | 2026-11-12 | COM-09, COM-11 | Se agrega Instagram (@enrumbate.mx) |
 | v0.2 | 2026-11-12 | todos | IDs de referencia y página `/designsystem.html` |
 | v0.1 | 2026-11-11 | — | Primera versión derivada del logo |

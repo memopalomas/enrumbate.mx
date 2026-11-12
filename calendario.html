@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario · Enrúmbate</title>
+  <meta name="description" content="Fechas de las próximas experiencias de Enrúmbate: conciertos, escapadas, catas, recorridos y vida nocturna.">
+  <meta name="theme-color" content="#F5F4F0">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enrúmbate">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://enrumbate.mx/calendario.html">
+  <meta property="og:title" content="Calendario · Enrúmbate">
+  <meta property="og:description" content="Fechas de las próximas experiencias de Enrúmbate: conciertos, escapadas, catas, recorridos y vida nocturna.">
+  <meta property="og:image" content="https://enrumbate.mx/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://enrumbate.mx/calendario.html">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600..700,100;1,9..144,600..700,100&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body id="top">
+  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+  <div id="site-header" data-active="calendario"></div>
+  <main id="contenido">
+
+    <section class="section-tight" aria-labelledby="page-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Agenda</p>
+            <h1 id="page-title" style="font-size:var(--fs-h2)">Calendario de experiencias</h1>
+            <p>Aparta tu lugar con tiempo: los cupos son limitados.</p>
+          </div>
+          <a class="more" href="select.html">¿Prefieres tu propia fecha? Mira Select <span data-icon="arrow"></span></a>
+        </div>
+        <div id="cal"></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+  <script>
+  (function () {
+    const fmtM = new Intl.DateTimeFormat('es-MX', { month: 'long', year: 'numeric' });
+    const fmtMon = new Intl.DateTimeFormat('es-MX', { month: 'short' });
+    const list = ENR.experiencias.filter(e => e.linea === 'originales').sort(ENRUI.byDate);
+    const groups = new Map();
+    list.forEach(e => {
+      const k = e.fecha ? e.fecha.slice(0, 7) : 'pronto';
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(e);
+    });
+    const html = [...groups].map(([k, items]) => {
+      const title = k === 'pronto' ? 'Próximamente' : fmtM.format(new Date(k + '-15T12:00:00')).replace(' de ', ' ').replace(/^./, c => c.toUpperCase());
+      return `<section class="cal-month"><h2>${title}</h2><div class="cal-list">${items.map(e => {
+        const d = e.fecha ? new Date(e.fecha + 'T12:00:00') : null;
+        const exact = e.fecha && /\d/.test(e.fechaTexto.split(' ')[0]);
+        const box = d ? `<b>${exact ? d.getDate() : '—'}</b><small>${fmtMon.format(d).replace('.', '')}</small>` : `<b>✦</b><small>Pronto</small>`;
+        const cat = ENR.categorias[e.categoria]?.nombre || '';
+        return `<article class="cal-item">
+          <div class="cal-date" aria-hidden="true">${box}</div>
+          <img class="cal-thumb" src="${e.img}" alt="" loading="lazy">
+          <div class="cal-info"><span class="tag">${ENRUI.esc(cat)}</span><h3>${ENRUI.esc(e.titulo)}</h3><span>${ENRUI.esc(e.fechaTexto)} · ${ENRUI.esc(e.lugar)}</span></div>
+          <a class="btn btn-primary" href="${ENRUI.wa('Hola Enrúmbate, quiero apartar lugar en: ' + e.titulo + ' · ' + e.fechaTexto)}" target="_blank" rel="noopener">Apartar lugar</a>
+        </article>`; }).join('')}</div></section>`;
+    }).join('');
+    document.getElementById('cal').innerHTML = html;
+  })();
+  </script>
+</body>
+</html>
