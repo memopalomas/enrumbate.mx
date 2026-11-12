@@ -227,9 +227,45 @@
     document.querySelectorAll('[data-icon]').forEach(s => { s.outerHTML = icon(s.dataset.icon, s.className); });
   }
 
+  /* ---------- Datos estructurados para Google (schema.org) ----------
+     Organización en todas las páginas; eventos con fecha (Originales vigentes)
+     en inicio, Originales y Calendario. Se generan de js/data.js. */
+  function schema(active) {
+    const BASE = 'https://enrumbate.mx/';
+    const org = {
+      '@type': 'TravelAgency', '@id': BASE + '#org', name: 'Enrúmbate', url: BASE,
+      slogan: 'Rumbo a tu siguiente experiencia',
+      logo: BASE + 'assets/logo-mark.png', image: BASE + 'assets/og-image.jpg',
+      telephone: '+52' + C.whatsapp.replace(/^52/, ''), email: C.email,
+      address: { '@type': 'PostalAddress', addressLocality: 'Guadalajara', addressRegion: 'Jalisco', addressCountry: 'MX' },
+      areaServed: 'Guadalajara, Jalisco', sameAs: [C.instagram, C.facebook]
+    };
+    const graph = [org];
+    if (['inicio', 'originales', 'calendario'].includes(active)) {
+      ENR.experiencias.filter(e => e.linea === 'originales' && e.fecha && vigente(e)).forEach(e => {
+        const ev = {
+          '@type': 'Event', name: e.titulo, description: e.desc,
+          startDate: e.fecha, endDate: e.fechaFin || e.fecha,
+          eventStatus: 'https://schema.org/EventScheduled',
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          location: { '@type': 'Place', name: e.lugar, address: { '@type': 'PostalAddress', addressLocality: 'Guadalajara', addressRegion: 'Jalisco', addressCountry: 'MX' } },
+          image: BASE + e.img, url: BASE + 'calendario.html', organizer: { '@id': BASE + '#org' }
+        };
+        const m = e.precio && e.precio.match(/\$\s?([\d,]+)/);
+        if (m) ev.offers = { '@type': 'Offer', price: m[1].replace(/,/g, ''), priceCurrency: 'MXN', availability: 'https://schema.org/InStock', url: BASE + 'calendario.html' };
+        graph.push(ev);
+      });
+    }
+    const sc = document.createElement('script');
+    sc.type = 'application/ld+json';
+    sc.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+    document.head.appendChild(sc);
+  }
+
   /* ---------- Init ---------- */
   const h = document.getElementById('site-header');
   if (h) h.outerHTML = header(h.dataset.active);
+  schema(h ? h.dataset.active : '');
   const f = document.getElementById('site-footer');
   if (f) f.outerHTML = footer();
   /* Botón flotante de WhatsApp (móvil y tablet) */
