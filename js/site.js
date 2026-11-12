@@ -16,6 +16,7 @@
     dish:   '<path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 8V6M10 6h4M2 20h20"/>',
     people: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 6 4.8"/>',
     gem:    '<path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M12 21 8 9l4-6 4 6z"/>',
+    ticket: '<path d="M3 8a2 2 0 0 0 0 4v0a2 2 0 0 1 0 4v2h18v-2a2 2 0 0 1 0-4 2 2 0 0 1 0-4V6H3z"/><path d="M14 6v12" stroke-dasharray="2 2"/>',
     badge:  '<circle cx="12" cy="9" r="6"/><path d="m12 6 1 2 2.2.3-1.6 1.5.4 2.2-2-1-2 1 .4-2.2-1.6-1.5L11 8z"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/>',
     car:    '<path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M3 12h18"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/>',
     crown:  '<path d="m3 8 4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>',
@@ -122,6 +123,7 @@
         <ul class="exp-meta">
           <li>${icon('cal')}<span>${esc(e.fechaTexto)}</span></li>
           <li>${icon('pin')}<span>${esc(e.lugar)}</span></li>
+          ${e.precio ? `<li>${icon('ticket')}<span>${esc(e.precio)}</span></li>` : ''}
         </ul>
         <a class="btn ${sel ? 'btn-select' : 'btn-primary'} exp-cta" href="${wa(txt)}" target="_blank" rel="noopener">${sel ? 'Cotizar' : 'Reservar'} ${icon('arrow', 'btn-icon')}</a>
       </div>

@@ -12,6 +12,7 @@
    - fecha       "AAAA-MM-DD" (primera fecha) o null si aún no hay
    - fechaTexto  cómo se muestra la fecha
    - lugar
+   - precio      (opcional) texto de precio, p. ej. "$450 por persona"
    - img, alt
    - etiqueta    texto del chip sobre la foto
    - inicio      true = aparece en "Próximas experiencias" del inicio
@@ -38,11 +39,18 @@ window.ENR = {
 
   experiencias: [
     /* ---------- Originales de Enrúmbate ---------- */
-    { id: "morat-vfg", linea: "originales", categoria: "conciertos", etiqueta: "Concierto",
-      titulo: "Transporte al concierto de Morat",
-      desc: "Te llevamos a la Arena VFG y te traemos de regreso, sin buscar estacionamiento.",
+    { id: "morat-vfg", linea: "originales", categoria: "conciertos", etiqueta: "Transporte",
+      titulo: "¡Rumbo a Morat!",
+      desc: "Te llevamos a la Arena VFG y te traemos de regreso. Incluye aire acondicionado, música de Morat en el camino, seguro de viajero, agua, snack y un regalo. Salidas desde Gran Terraza Oblatos, Parque Rojo y Centro Sur.",
+      precio: "$450 por persona · 3 por $1,260 · Aparta con $250",
       fecha: "2026-11-20", fechaTexto: "20 y 21 de noviembre 2026", lugar: "Arena VFG, GDL",
       img: "assets/img/exp/conciertos.jpg", alt: "Banda en concierto bajo luces de escenario", inicio: true },
+
+    { id: "morat-fan-party", linea: "originales", categoria: "conciertos", etiqueta: "Fan party",
+      titulo: "Morat Fan Party: ¡La noche es nuestra!",
+      desc: "Una noche para cantar y bailar Morat con otros fans, con cóctel de bienvenida y regalos. Evento de fans, no oficial. Solo mayores de edad.",
+      fecha: "2026-11-28", fechaTexto: "Sábado 28 de noviembre 2026 · 9:00 p. m.", lugar: "Rakata Chapultepec, GDL",
+      img: "assets/img/exp/bares.jpg", alt: "Coctel iluminado con luces neón en un bar", inicio: true },
 
     { id: "pub-crawl-gdl", linea: "originales", categoria: "nocturna", etiqueta: "Vida nocturna",
       titulo: "Pub Crawl Guadalajara",

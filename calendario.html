@@ -61,7 +61,7 @@
       const title = k === 'pronto' ? 'Próximamente' : fmtM.format(new Date(k + '-15T12:00:00')).replace(' de ', ' ').replace(/^./, c => c.toUpperCase());
       return `<section class="cal-month"><h2>${title}</h2><div class="cal-list">${items.map(e => {
         const d = e.fecha ? new Date(e.fecha + 'T12:00:00') : null;
-        const exact = e.fecha && /\d/.test(e.fechaTexto.split(' ')[0]);
+        const exact = e.fecha && /\b\d{1,2}\b/.test(e.fechaTexto);
         const box = d ? `<b>${exact ? d.getDate() : '—'}</b><small>${fmtMon.format(d).replace('.', '')}</small>` : `<b>✦</b><small>Pronto</small>`;
         const cat = ENR.categorias[e.categoria]?.nombre || '';
         return `<article class="cal-item">
