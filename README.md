@@ -7,6 +7,7 @@ Sitio estático (HTML/CSS) de Enrúmbate.
 - `originales.html`, `select.html` — Líneas de experiencias
 - `experiencias.html` (filtros), `calendario.html`, `nosotros.html`, `contacto.html` (formulario a WhatsApp)
 - `designsystem.html` — Design system para revisión del cliente
+- `textos.html` — Revisión de textos v1 (antes/después con IDs TXT-xx) para la clienta
 - `js/data.js` — **Experiencias, fechas y contacto: edita aquí** y se actualizan todas las páginas
 - `js/site.js` — Header, footer, tarjetas e iconos compartidos
 - `designsystem.md` — Colores, tipografía, retícula y componentes

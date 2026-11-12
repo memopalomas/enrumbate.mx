@@ -40,13 +40,13 @@ window.ENR = {
     /* ---------- Originales de Enrúmbate ---------- */
     { id: "morat-vfg", linea: "originales", categoria: "conciertos", etiqueta: "Concierto",
       titulo: "Transporte al concierto de Morat",
-      desc: "Vive tu concierto sin preocuparte por el traslado: vamos y regresamos juntos.",
+      desc: "Te llevamos a la Arena VFG y te traemos de regreso, sin buscar estacionamiento.",
       fecha: "2026-11-20", fechaTexto: "20 y 21 de noviembre 2026", lugar: "Arena VFG, GDL",
       img: "assets/img/exp/conciertos.jpg", alt: "Banda en concierto bajo luces de escenario", inicio: true },
 
     { id: "pub-crawl-gdl", linea: "originales", categoria: "nocturna", etiqueta: "Vida nocturna",
       titulo: "Pub Crawl Guadalajara",
-      desc: "Recorrido por los mejores bares de la ciudad con gran ambiente.",
+      desc: "Una noche recorriendo varios bares de Guadalajara en grupo.",
       fecha: "2027-01-15", fechaTexto: "Enero 2027", lugar: "GDL",
       img: "assets/img/exp/bares.jpg", alt: "Coctel iluminado con luces neón en un bar", inicio: true },
 
@@ -64,50 +64,50 @@ window.ENR = {
 
     { id: "cata-cerveza", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata de cerveza de importación",
-      desc: "Descubre y disfruta una selección de cervezas del mundo.",
+      desc: "Una selección de cervezas de importación para probar y comparar.",
       fecha: null, fechaTexto: "Próximamente", lugar: "GDL",
       img: "assets/img/exp/cerveza.jpg", alt: "Degustación de cuatro cervezas" },
 
     { id: "cata-vinedos", linea: "originales", categoria: "catas", etiqueta: "Cata",
       titulo: "Cata en viñedos",
-      desc: "Una experiencia entre viñedos con degustación y maridaje.",
+      desc: "Degustación y maridaje en un viñedo de Jalisco.",
       fecha: null, fechaTexto: "Próximamente", lugar: "Jalisco",
       img: "assets/img/exp/vinedos.jpg", alt: "Viñedo al atardecer" },
 
     { id: "transporte-conciertos", linea: "originales", categoria: "conciertos", etiqueta: "Concierto",
       titulo: "Transporte a conciertos",
-      desc: "Vive tus conciertos favoritos sin preocuparte por el traslado.",
+      desc: "Viaje redondo a la Arena VFG para los conciertos de la temporada.",
       fecha: null, fechaTexto: "Próximos eventos", lugar: "Arena VFG, GDL",
       img: "assets/img/exp/conciertos.jpg", alt: "Banda en concierto bajo luces de escenario" },
 
     { id: "tour-gotico", linea: "originales", categoria: "recorridos", etiqueta: "Recorrido",
       titulo: "Tour Gótico ZMG",
-      desc: "Historias, leyendas y misterios de Guadalajara.",
+      desc: "Recorrido por las leyendas y los templos neogóticos de Guadalajara.",
       fecha: "2027-01-22", fechaTexto: "Enero 2027", lugar: "GDL",
       img: "assets/img/exp/tour-gotico.jpg", alt: "Templo Expiatorio de Guadalajara, de estilo neogótico" },
 
     /* ---------- Enrúmbate Select ---------- */
     { id: "select-vinedos", linea: "select", categoria: "catas", etiqueta: "Select",
       titulo: "Cata en viñedos",
-      desc: "Vive una experiencia enológica entre viñedos, vino y naturaleza.",
+      desc: "Visita privada a un viñedo, con cata guiada para tu grupo.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el destino",
       img: "assets/img/exp/vinedos.jpg", alt: "Viñedo al atardecer" },
 
     { id: "select-cenas", linea: "select", categoria: "cenas", etiqueta: "Select",
       titulo: "Cenas especiales",
-      desc: "Cenas temáticas y maridajes en lugares únicos y exclusivos.",
+      desc: "Cenas temáticas y maridajes en un lugar elegido para la ocasión.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el lugar",
       img: "assets/img/exp/cenas.jpg", alt: "Mesa para cenar con copas de vino a la luz de las velas" },
 
     { id: "select-escapadas", linea: "select", categoria: "escapadas", etiqueta: "Select",
-      titulo: "Escapadas exclusivas",
-      desc: "Fines de semana en destinos increíbles con experiencias únicas.",
+      titulo: "Escapadas de fin de semana",
+      desc: "Hospedaje, traslados y actividades en el destino que elijas.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el destino",
       img: "assets/img/exp/escapadas.jpg", alt: "Persona en una alberca infinita frente al mar" },
 
     { id: "select-recorridos", linea: "select", categoria: "privadas", etiqueta: "Select",
       titulo: "Recorridos privados",
-      desc: "Descubre destinos con un guía exclusivo y a tu ritmo.",
+      desc: "Un guía solo para tu grupo, al ritmo que ustedes quieran.",
       fecha: null, fechaTexto: "Fecha a tu medida", lugar: "Tú eliges el destino",
       img: "assets/img/exp/recorridos.jpg", alt: "Callejón de Guanajuato con bugambilias" }
   ],

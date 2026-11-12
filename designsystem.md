@@ -1,6 +1,6 @@
 # Enrúmbate — Design System
 
-> v0.6 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
+> v0.7 · 2026-11-12 · Derivado del logo (`assets/logo.jpg`)
 > Implementación: `css/styles.css` (tokens en `:root`) · Vista para cliente: `/designsystem.html`
 
 ## Cómo pedir cambios
@@ -218,6 +218,7 @@ Composiciones en desktop:
 
 | Versión | Fecha | IDs | Cambio |
 |---|---|---|---|
+| v0.7 | 2026-11-12 | MAR-04, VOZ-04 | Textos v1: textos del sitio reescritos con VOZ-04; antes/después con IDs TXT-xx en textos.html |
 | v0.6 | 2026-11-12 | VOZ-04 | Revisión de copy con criterios antislop: se agrega regla contra relleno promocional |
 | v0.5 | 2026-11-12 | COM-03 | Subrayado de enlaces más delgado: de 6px a 2px |
 | v0.4 | 2026-11-12 | MAR-04, MAR-05, COL-05, COL-25…27, COL-54, COL-55, COM-10…18 | Referencias de la clienta: líneas Originales y Select, turquesa Select, eslogan, componentes de páginas nuevas |

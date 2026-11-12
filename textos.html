@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enrúmbate · Revisión de textos</title>
+  <meta name="description" content="Revisión de textos v1 del sitio de Enrúmbate: antes y después de cada cambio, con un ID para aprobar o pedir ajustes.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#053067">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enrúmbate">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:url" content="https://enrumbate.mx/textos.html">
+  <meta property="og:title" content="Enrúmbate · Revisión de textos v1">
+  <meta property="og:description" content="Antes y después de cada texto del sitio, con un ID para aprobar o pedir ajustes.">
+  <meta property="og:image" content="https://enrumbate.mx/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,600..700,100;1,9..144,600..700,100&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/site.css">
+  <style>
+    body { background: var(--cream-50); }
+    .tx-top { background: var(--navy-700); color: var(--cream-50); padding: var(--space-4) 0; }
+    .tx-top .container { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+    .tx-top .brand span { color: var(--cream-50); }
+    .tx-top .brand img { height: 36px; }
+    .tx-top a.text-link { color: var(--cream-50); font-size: var(--fs-small); }
+    .tx-hero { padding: var(--space-8) 0 var(--space-6); display: grid; gap: var(--space-4); }
+    .tx-hero .lead { color: var(--color-text-muted); max-width: 62ch; }
+    .howto { background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-card); padding: var(--space-6); display: grid; gap: var(--space-3); border-left: 6px solid var(--magenta-600); }
+    .howto h2 { font-size: var(--fs-h3); }
+    .howto ul { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); }
+    .howto code { background: var(--cream-100, #EDEBE4); padding: 2px 6px; border-radius: 6px; font-size: .9em; overflow-wrap: anywhere; }
+    .legend { display: flex; flex-wrap: wrap; gap: var(--space-3); font-size: var(--fs-small); }
+    .tag { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: var(--radius-pill); font-size: .75rem; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+    .tag.cli { background: var(--magenta-100, #FCE4F0); color: var(--magenta-700, #A3075A); }
+    .tag.nue { background: var(--cyan-100); color: var(--cyan-800); }
+    .tag.conf { background: var(--yellow-100, #FDF5D3); color: #6B5400; }
+    .tx-group { padding: var(--space-6) 0; border-top: 1px solid var(--line); display: grid; gap: var(--space-4); }
+    .tx-group h2 { font-size: var(--fs-h3); display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
+    .tx-group h2 a { font: 500 var(--fs-small)/1 var(--font-body); }
+    .tx { background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-card); padding: var(--space-5); display: grid; gap: var(--space-3); min-width: 0; }
+    .tx-head { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+    .tx-head .where { font-weight: 700; margin-right: auto; }
+    .ba { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 760px) { .ba { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+    .ba > div { border-radius: var(--radius-sm, 10px); padding: var(--space-3) var(--space-4); min-width: 0; }
+    .ba small { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+    .ba .antes { background: var(--cream-50); color: var(--color-text-muted); }
+    .ba .antes p { text-decoration: line-through; text-decoration-thickness: 1px; text-decoration-color: rgba(0,0,0,.35); }
+    .ba .ahora { background: var(--cyan-100); color: var(--navy-900); }
+    .ba .ahora small { color: var(--cyan-800); }
+    .ba p { margin: 0; overflow-wrap: anywhere; }
+    .why { font-size: var(--fs-small); color: var(--color-text-muted); margin: 0; }
+    .ask { font-size: var(--fs-small); margin: 0; background: var(--yellow-100, #FDF5D3); padding: var(--space-2) var(--space-3); border-radius: 8px; }
+    .id { justify-self: start; display: inline-flex; align-items: center; gap: 6px; font: 700 .75rem/1 var(--font-body); letter-spacing: .06em; background: var(--navy-700); color: var(--cream-50); border: 0; border-radius: var(--radius-pill); padding: 6px 10px; cursor: pointer; }
+    .id::after { content: "⧉"; font-weight: 400; opacity: .6; }
+    .id:hover, .id.ok { background: var(--magenta-600); }
+    .id.ok::after { content: "✓"; opacity: 1; }
+    .kept { display: grid; gap: var(--space-2); }
+    .kept li { margin-left: 1.2em; }
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--navy-700); color: var(--cream-50); padding: 12px 20px; border-radius: var(--radius-pill); font-size: var(--fs-small); font-weight: 700; opacity: 0; pointer-events: none; transition: all var(--dur) var(--ease); z-index: 99; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .tx-foot { padding: var(--space-8) 0; color: var(--color-text-muted); font-size: var(--fs-small); }
+  </style>
+</head>
+<body>
+  <div class="tx-top">
+    <div class="container">
+      <a class="brand" href="inicio.html"><img src="assets/logo-mark-light.png" alt="" width="27" height="36"><span>Enrúmbate</span></a>
+      <a class="text-link" href="designsystem.html">Ver Design System</a>
+    </div>
+  </div>
+
+  <main class="container">
+    <header class="tx-hero">
+      <p class="eyebrow">Revisión de textos · v1</p>
+      <h1>Textos del sitio para <em class="spark">revisar</em></h1>
+      <p class="lead">Ajustamos los textos para que digan qué hace Enrúmbate en concreto y suenen menos a folleto. Aquí está cada cambio, con el texto anterior y el nuevo. Todo ya está aplicado en el sitio, pero se puede regresar o cambiar cualquiera.</p>
+      <div class="howto">
+        <h2>¿Cómo revisar?</h2>
+        <ul>
+          <li>Cada cambio tiene un ID como <button class="id" data-id="TXT-01">TXT-01</button>. Haz clic para copiarlo.</li>
+          <li>Mándanos el ID con tu respuesta: <code>TXT-05 ok</code>, <code>TXT-10 → regresar al texto anterior</code>, <code>TXT-14 → cambiar “organizar menos” por …</code>.</li>
+          <li>Los marcados <span class="tag conf">Confirmar</span> dicen algo sobre el servicio (qué incluye, cómo se atiende). Necesitamos que nos confirmes que es cierto.</li>
+        </ul>
+        <div class="legend">
+          <span class="tag cli">Texto tuyo</span> venía de tus referencias
+          <span class="tag nue">Texto nuestro</span> lo escribimos nosotros
+        </div>
+      </div>
+    </header>
+
+    <div id="lista"></div>
+
+    <section class="tx-group">
+      <h2>Lo que no cambiamos</h2>
+      <ul class="kept">
+        <li>El eslogan <b>Descubre. Vive. Repite.</b></li>
+        <li>El título del inicio <b>Experiencias que te llevan más allá de un simple viaje</b>.</li>
+        <li><b>Planes memorables, con todo el gusto de vivirlos</b> (página de construcción y pie de página).</li>
+        <li>Los nombres de las experiencias, fechas y lugares.</li>
+        <li>Los tres pasos de “Cómo funciona” y la página de contacto.</li>
+      </ul>
+    </section>
+
+    <p class="tx-foot">Revisión de textos v1 · 12 nov 2026 · Regla aplicada: <a class="text-link" href="designsystem.html#voz">VOZ-04</a> del Design System.</p>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // c: "cli" = texto de la clienta, "nue" = texto nuestro. conf: pregunta a confirmar.
+    const T = [
+      { pag: "Inicio", url: "inicio.html", items: [
+        { id: "TXT-01", c: "cli", where: "Tarjeta Originales", antes: "Experiencias únicas, divertidas y para todos.", ahora: "Salidas en grupo con fecha fija. Ve solo o con amigos.", why: "“Únicas, divertidas y para todos” podría decirlo cualquier marca; ahora explica qué es la línea." },
+        { id: "TXT-02", c: "cli", where: "Tarjeta Select", antes: "Experiencias exclusivas, cuidadosamente diseñadas.", ahora: "Planes privados, armados para tu ocasión.", why: "“Exclusivas” y “cuidadosamente” son adjetivos de folleto; “privados” dice lo mismo en concreto." },
+        { id: "TXT-03", c: "cli", where: "Cómo funciona · texto", antes: "Una atención profesional, cercana y con buena energía hace más fácil organizar cada plan, desde la elección hasta el momento de disfrutarlo.", ahora: "Te atendemos por WhatsApp, de forma directa y sin trámites.", why: "Frase larga con tres adjetivos seguidos; los pasos de abajo ya explican el proceso.", conf: "¿La atención es principalmente por WhatsApp?" },
+        { id: "TXT-04", c: "nue", where: "Etiquetas sobre títulos", antes: "De la idea al disfrute · El primer paso es imaginarlo", ahora: "Cómo funciona · Arma tu plan", why: "Frases de relleno; ahora solo nombran la sección." }
+      ]},
+      { pag: "Originales", url: "originales.html", items: [
+        { id: "TXT-05", c: "cli", where: "Título principal", antes: "Experiencias auténticas, sociales y accesibles.", ahora: "Planes para salir en grupo.", why: "Tres adjetivos seguidos; el nuevo dice qué es la línea en una idea." },
+        { id: "TXT-06", c: "cli", where: "Texto bajo el título", antes: "Planes diferentes para vivir, compartir y descubrir nuevos lugares.", ahora: "Conciertos, catas, recorridos y bares con fecha fija. Puedes venir solo o con amigos.", why: "Ahora nombra qué tipo de planes hay." },
+        { id: "TXT-07", c: "nue", where: "Sección Experiencias", antes: "Salidas con fecha, cupo y todo resuelto: tú solo llegas a disfrutar y a conocer gente con tus mismos gustos.", ahora: "Salidas con fecha y cupo. Nos encargamos de traslados y reservas, y en cada una conoces gente con gustos parecidos a los tuyos.", why: "“Todo resuelto” se cambió por lo que de verdad se resuelve.", conf: "¿Las Originales incluyen traslados y reservas?" }
+      ]},
+      { pag: "Select", url: "select.html", items: [
+        { id: "TXT-08", c: "cli", where: "Título principal", antes: "Experiencias exclusivas, privadas y personalizadas.", ahora: "Planes privados, a tu medida.", why: "Tres adjetivos que dicen casi lo mismo; quedan dos ideas claras." },
+        { id: "TXT-09", c: "cli", where: "Texto bajo el título", antes: "Viajes, catas, cenas y recorridos diseñados a tu medida.", ahora: "Viajes, catas, cenas y recorridos para celebrar con tu pareja, tu familia, tus amigos o tu equipo.", why: "“A tu medida” ya está en el título; aquí se dice para quién es." },
+        { id: "TXT-10", c: "cli", where: "Beneficios (4 íconos)", antes: "Experiencias premium · Planes privados y personalizados · Atención preferencial · Logística completa y segura", ahora: "Lugares y proveedores que conocemos · Grupos privados, sin desconocidos · Contacto directo por WhatsApp · Traslados y reservas incluidos", why: "Los anteriores podían ser de cualquier agencia. Los nuevos dicen qué recibe el cliente.", conf: "¿Select incluye siempre traslados y reservas? ¿Trabajan con proveedores fijos?" },
+        { id: "TXT-11", c: "nue", where: "Sección Experiencias", antes: "Tú eliges fecha, destino y compañía. Nosotros diseñamos cada detalle para que solo te ocupes de disfrutar.", ahora: "Tú eliges fecha, destino y compañía. Nosotros armamos el itinerario, las reservas y los traslados.", why: "“Cada detalle” se cambió por lo que de verdad se arma." },
+        { id: "TXT-12", c: "nue", where: "Llamada final", antes: "Aniversarios, propuestas, viajes de celebración o una experiencia que nadie más tenga. Cuéntanos y la diseñamos contigo.", ahora: "Aniversarios, propuestas de matrimonio, viajes de celebración. Cuéntanos la idea y la diseñamos contigo.", why: "“Que nadie más tenga” es una promesa difícil de cumplir." }
+      ]},
+      { pag: "Nosotros", url: "nosotros.html", items: [
+        { id: "TXT-13", c: "nue", where: "Texto bajo el título", antes: "Creamos experiencias para que vivas más y te preocupes menos: tú pones el gusto, nosotros te ayudamos a darle forma.", ahora: "Organizamos conciertos, catas, recorridos y escapadas. Tú pones el gusto; nosotros te ayudamos a darle forma.", why: "Empieza diciendo qué hacemos." },
+        { id: "TXT-14", c: "nue", where: "Nuestra historia", antes: "Enrúmbate nace en Guadalajara con una idea sencilla: los mejores recuerdos no siempre están lejos, solo hace falta alguien que arme el plan. Conciertos, catas, recorridos, escapadas y noches para salir con amigos, organizados de principio a fin. Tenemos dos formas de vivirlo.", ahora: "Enrúmbate nace en Guadalajara para quien quiere salir más y organizar menos. Nos encargamos de boletos, traslados, reservas y horarios, ya sea para un concierto, una cata, un recorrido, una escapada o una noche con amigos.", why: "Sigue siendo provisional: lo ideal es contar la historia real de cómo empezó Enrúmbate.", conf: "¿Nos compartes la historia real (quién, cuándo, por qué)?" },
+        { id: "TXT-15", c: "cli", where: "Las dos líneas", antes: "Originales: experiencias sociales y accesibles, con fecha y cupo, para compartir con más gente. Select: experiencias privadas y personalizadas, diseñadas a la medida de cada ocasión.", ahora: "Originales: salidas en grupo con fecha y cupo, para ir solo o con amigos. Select: planes privados, a la medida de cada ocasión.", why: "Mismo sentido, en menos palabras." },
+        { id: "TXT-16", c: "nue", where: "Lo que nos mueve (3 valores)", antes: "Buscamos experiencias que valga la pena contar: lugares, sabores y momentos fuera de lo de siempre. · Traslados, reservas y tiempos coordinados para que solo te ocupes de disfrutar. · Atención profesional y con buena energía, antes, durante y después de cada plan.", ahora: "Buscamos lugares y planes que no salen en la guía de siempre. · Coordinamos traslados, reservas y horarios por ti. · Te respondemos por WhatsApp desde la primera pregunta hasta el regreso a casa.", why: "Frases más cortas y concretas.", conf: "¿Acompañan por WhatsApp durante toda la experiencia?" },
+        { id: "TXT-17", c: "nue", where: "Llamada final", antes: "Escríbenos y te ayudamos a elegir la experiencia ideal.", ahora: "Escríbenos y te ayudamos a elegir.", why: "“Ideal” no aporta." }
+      ]},
+      { pag: "Tarjetas de experiencias", url: "experiencias.html", items: [
+        { id: "TXT-20", c: "cli", where: "Transporte al concierto de Morat", antes: "Vive tu concierto sin preocuparte por el traslado: vamos y regresamos juntos.", ahora: "Te llevamos a la Arena VFG y te traemos de regreso, sin buscar estacionamiento.", why: "Varias tarjetas empezaban con “Vive…”; ahora cada una dice qué incluye." },
+        { id: "TXT-21", c: "cli", where: "Pub Crawl Guadalajara", antes: "Recorrido por los mejores bares de la ciudad con gran ambiente.", ahora: "Una noche recorriendo varios bares de Guadalajara en grupo.", why: "“Los mejores” y “gran ambiente” son promesas genéricas.", conf: "¿Cuántos bares se visitan? Podemos ponerlo." },
+        { id: "TXT-22", c: "nue", where: "Cata de vino mexicano", antes: "Conoce lo mejor del vino hecho en México, copa por copa.", ahora: "Una selección de vinos de distintas regiones de México.", why: "Texto provisional; falta saber cuántos vinos y de qué regiones." },
+        { id: "TXT-23", c: "nue", where: "Punta Pérula y Cancuncito", antes: "Escápate a la costa de Jalisco: playa, mar tranquilo y atardeceres.", ahora: "Salida a la costa de Jalisco, a dos playas de mar tranquilo.", why: "Texto provisional; falta saber si es de un día o con hospedaje." },
+        { id: "TXT-24", c: "cli", where: "Cata de cerveza de importación", antes: "Descubre y disfruta una selección de cervezas del mundo.", ahora: "Una selección de cervezas de importación para probar y comparar.", why: "“Descubre y disfruta” no dice nada de la cata." },
+        { id: "TXT-25", c: "cli", where: "Cata en viñedos (Originales)", antes: "Una experiencia entre viñedos con degustación y maridaje.", ahora: "Degustación y maridaje en un viñedo de Jalisco.", why: "Más directo." },
+        { id: "TXT-26", c: "cli", where: "Transporte a conciertos", antes: "Vive tus conciertos favoritos sin preocuparte por el traslado.", ahora: "Viaje redondo a la Arena VFG para los conciertos de la temporada.", why: "Era casi igual a la tarjeta de Morat.", conf: "¿Solo Arena VFG o también otros foros?" },
+        { id: "TXT-27", c: "cli", where: "Tour Gótico ZMG", antes: "Historias, leyendas y misterios de Guadalajara.", ahora: "Recorrido por las leyendas y los templos neogóticos de Guadalajara.", why: "Tres palabras parecidas; ahora dice qué se recorre.", conf: "¿Es de noche? Podríamos mencionarlo." },
+        { id: "TXT-28", c: "cli", where: "Cata en viñedos (Select)", antes: "Vive una experiencia enológica entre viñedos, vino y naturaleza.", ahora: "Visita privada a un viñedo, con cata guiada para tu grupo.", why: "Distingue la versión Select de la Original." },
+        { id: "TXT-29", c: "cli", where: "Cenas especiales", antes: "Cenas temáticas y maridajes en lugares únicos y exclusivos.", ahora: "Cenas temáticas y maridajes en un lugar elegido para la ocasión.", why: "“Únicos y exclusivos” es relleno." },
+        { id: "TXT-30", c: "cli", where: "Escapadas exclusivas → Escapadas de fin de semana", antes: "Fines de semana en destinos increíbles con experiencias únicas.", ahora: "Hospedaje, traslados y actividades en el destino que elijas.", why: "Dice qué incluye en lugar de “increíbles” y “únicas”. También cambiamos el nombre de la tarjeta.", conf: "¿Las escapadas incluyen hospedaje?" },
+        { id: "TXT-31", c: "cli", where: "Recorridos privados", antes: "Descubre destinos con un guía exclusivo y a tu ritmo.", ahora: "Un guía solo para tu grupo, al ritmo que ustedes quieran.", why: "“Exclusivo” se cambió por lo que significa." }
+      ]}
+    ];
+    const esc = s => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+    document.getElementById("lista").innerHTML = T.map(g => `
+      <section class="tx-group">
+        <h2>${esc(g.pag)} <a class="text-link" href="${g.url}">Ver página</a></h2>
+        ${g.items.map(t => `
+          <article class="tx" id="${t.id}">
+            <div class="tx-head">
+              <span class="where">${esc(t.where)}</span>
+              <span class="tag ${t.c}">${t.c === "cli" ? "Texto tuyo" : "Texto nuestro"}</span>
+              ${t.conf ? '<span class="tag conf">Confirmar</span>' : ""}
+              <button class="id" data-id="${t.id}">${t.id}</button>
+            </div>
+            <div class="ba">
+              <div class="antes"><small>Antes</small><p>${esc(t.antes)}</p></div>
+              <div class="ahora"><small>Ahora</small><p>${esc(t.ahora)}</p></div>
+            </div>
+            <p class="why">${esc(t.why)}</p>
+            ${t.conf ? `<p class="ask"><b>Pregunta:</b> ${esc(t.conf)}</p>` : ""}
+          </article>`).join("")}
+      </section>`).join("");
+
+    const toast = document.getElementById("toast");
+    document.addEventListener("click", e => {
+      const b = e.target.closest(".id"); if (!b) return;
+      const id = b.dataset.id;
+      const done = () => {
+        b.classList.add("ok"); setTimeout(() => b.classList.remove("ok"), 1200);
+        toast.textContent = id + " copiado"; toast.classList.add("show");
+        clearTimeout(toast._t); toast._t = setTimeout(() => toast.classList.remove("show"), 1600);
+      };
+      try { navigator.clipboard.writeText(id).then(done, done); } catch (_) { done(); }
+    });
+  </script>
+</body>
+</html>
