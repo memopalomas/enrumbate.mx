@@ -12,6 +12,7 @@ Sitio estático (HTML/CSS) de Enrúmbate.
 - `js/site.js` — Header, footer, tarjetas e iconos compartidos
 - `designsystem.md` — Colores, tipografía, retícula y componentes
 - `css/styles.css` — Tokens y componentes base · `css/site.css` — Componentes de páginas
+- `STACK.md` — Stack actual y plan para WordPress (Astra + hijo, Elementor Free, ACF)
 - `assets/` — Logo y fotos (créditos en el footer de la home)
 
 ## Deploy

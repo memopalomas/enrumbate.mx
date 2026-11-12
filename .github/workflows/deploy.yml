@@ -45,3 +45,4 @@ jobs:
             .github/**
             designsystem.md
             README.md
+            STACK.md
